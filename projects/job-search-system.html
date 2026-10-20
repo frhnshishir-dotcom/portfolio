@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI-assisted job-search system — Farhan Labib Shishir</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Farhan Labib Shishir — International Business student in Paris exploring AI, social media, research and content workflows.">
+<meta name="theme-color" content="#071039">
+</head>
+<body>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#071039}
+*,*::before,*::after{box-sizing:border-box}
+a{color:#E6EDFD;text-decoration:none}a:hover{color:#6E92F2}
+a:focus-visible,button:focus-visible{outline:2px solid #6E92F2;outline-offset:3px}
+.sora{font-family:'Sora',sans-serif}
+.code{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#E6EDFD;padding:6px 12px;border:1px solid #1A3BB0;border-radius:999px;background:#0F2270}
+.navpill{padding:9px 16px;border-radius:999px;font-size:14px;color:#AFC5F8;border:1px solid transparent;transition:color .2s ease,border-color .2s ease}
+.navpill:hover{color:#E6EDFD;border-color:#1A3BB0}
+.navpill.on{color:#E6EDFD;border-color:#2E5DE6;background:#0F2270}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#2E5DE6;color:#E6EDFD;border-radius:999px;padding:12px 20px;min-height:44px;font-weight:600;font-size:14px;transition:background-color .2s ease}
+.cta:hover{background:#1A3BB0;color:#E6EDFD}
+.pill{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;border:1px solid #1A3BB0;color:#E6EDFD;white-space:nowrap;background:#071039}
+.pill i{width:7px;height:7px;display:block;flex:none}
+.chip{font-size:12px;font-weight:500;padding:5px 10px;border-radius:8px;background:#1A3BB0;color:#AFC5F8}
+.lbl{font-size:11px;color:#6E92F2;font-weight:500;margin-bottom:4px;display:block}
+.sq{width:44px;height:44px;border-radius:50%;border:1px solid #1A3BB0;display:flex;align-items:center;justify-content:center;color:#E6EDFD;transition:border-color .2s ease}
+.sq:hover{border-color:#6E92F2}
+.tab{font:inherit;font-size:13px;font-weight:600;padding:0 16px;min-height:40px;border-radius:999px;cursor:pointer;transition:color .2s ease,border-color .2s ease,background-color .2s ease}
+.box{border:1px solid #1A3BB0;border-radius:22px;padding:24px;background:#0F2270}
+.box p,.box li{color:#AFC5F8;font-size:15px;line-height:1.6}
+.step h3{margin:0 0 6px;font-family:'Sora',sans-serif;font-size:18px;font-weight:600}
+.step p{margin:0}
+.sh{margin:0 0 20px;font-family:'Sora',sans-serif;font-size:clamp(20px,2vw,24px);font-weight:600}
+.next{transition:border-color .2s ease}
+.next:hover{border-color:#2E5DE6}
+.mbar{display:none}
+.avatar{aspect-ratio:1/1;width:100%;border-radius:20px;display:flex;align-items:center;justify-content:center;color:#071039}
+.sidetop{display:flex;flex-direction:column;gap:22px}
+@media (max-width:900px){
+.mbar{display:flex}
+.dnav,.hide-m{display:none !important}
+.wrap{padding:16px 16px 40px !important;gap:20px !important}
+.side{position:static !important;flex-basis:100% !important;padding:20px !important;gap:16px !important;border-radius:24px !important}
+.sidetop{flex-direction:row;align-items:center;gap:16px}
+.avatar{width:72px;flex:none;border-radius:18px}
+.avatar span{font-size:24px !important}
+.orb{width:300px !important;height:300px !important;top:-170px !important;right:-150px !important;opacity:0.45 !important}
+.box{padding:20px}
+.viewer{border-radius:22px !important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<div style="background: #071039; color: #E6EDFD; font-family: 'Manrope', system-ui, sans-serif; font-size: 16px; line-height: 1.65; position: relative; overflow: hidden; min-width: 0">
+
+<div class="orb" aria-hidden="true" style="position: absolute; top: -260px; right: -160px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle at 38% 72%, #6E92F2 0%, #2E5DE6 26%, #0F2270 58%, rgba(7,16,57,0) 72%); opacity: 0.6; pointer-events: none"></div>
+
+<header class="mbar" style="position: sticky; top: 0; z-index: 20; flex-direction: column; background: rgba(7,16,57,0.94); border-bottom: 1px solid #1A3BB0">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 16px">
+<a href="../index.html#home" style="display: flex; align-items: center; gap: 10px; min-height: 44px"><span class="sora" style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #E6EDFD; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px">FS</span><span class="sora" style="font-weight: 600; font-size: 15px">Farhan</span></a>
+<button type="button" aria-expanded="false" aria-controls="pmenu" data-action="toggleMenu" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #2E5DE6; background: #0F2270; color: #E6EDFD; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Menu<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+</div>
+<div data-if="menuOpen" style="display:none">
+<nav id="pmenu" aria-label="Main" style="display: flex; flex-direction: column; padding: 4px 16px 16px">
+<a href="../index.html#home" style="padding: 12px 4px; border-bottom: 1px solid #1A3BB0; font-weight: 600">Home</a>
+<a href="../index.html#ai" aria-current="page" style="padding: 12px 4px; border-bottom: 1px solid #1A3BB0; font-weight: 600; color: #6E92F2">AI &amp; Automation</a>
+<a href="../index.html#social" style="padding: 12px 4px; border-bottom: 1px solid #1A3BB0; font-weight: 600">Social &amp; Research</a>
+<a href="../index.html#experiments" style="padding: 12px 4px; border-bottom: 1px solid #1A3BB0; font-weight: 600">Experiments</a>
+<a href="../index.html#about" style="padding: 12px 4px; border-bottom: 1px solid #1A3BB0; font-weight: 600">About</a>
+<a href="../index.html#contact" style="padding: 12px 4px; font-weight: 600">Contact</a>
+</nav>
+</div>
+</header>
+
+<div class="wrap" style="max-width: 1360px; margin: 0 auto; padding: 24px 32px 48px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; position: relative">
+
+<aside class="side" aria-label="Profile" style="position: sticky; top: 24px; flex: 0 0 300px; min-width: 0; border: 1px solid #1A3BB0; border-radius: 28px; background: #0F2270; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<a class="sidetop" href="../index.html#home">
+<div class="avatar" style="background: #AFC5F8" aria-hidden="true"><span class="sora" style="font-size: 72px; font-weight: 600; letter-spacing: -0.04em">FS</span></div>
+<div>
+<p class="sora" style="margin: 0; font-weight: 600; font-size: 19px; line-height: 1.2">Farhan Labib Shishir</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #AFC5F8; line-height: 1.45">International Business · INSEEC<br>Paris, France</p>
+</div>
+</a>
+<div class="hide-m"><span class="lbl">Looking for</span><div style="font-weight: 600; font-size: 15px; line-height: 1.45">An alternance in digital, content or business development</div></div>
+<div class="hide-m" style="display: flex; gap: 8px; align-items: center">
+<a class="sq" href="https://github.com/frhnshishir-dotcom" aria-label="GitHub profile"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 17l-5-5 5-5M16 7l5 5-5 5"></path></svg></a>
+<a class="cta" href="../index.html#contact" style="flex: 1">Get in touch <span aria-hidden="true">↗</span></a>
+</div>
+</aside>
+
+<main style="flex: 999 1 600px; min-width: 0">
+<nav class="dnav" aria-label="Main" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 72px">
+<div style="display: flex; flex-wrap: wrap; gap: 4px">
+<a class="navpill" href="../index.html#home">Home</a>
+<a class="navpill on" href="../index.html#ai" aria-current="page">AI &amp; Automation</a>
+<a class="navpill" href="../index.html#social">Social &amp; Research</a>
+<a class="navpill" href="../index.html#experiments">Experiments</a>
+<a class="navpill" href="../index.html#about">About</a>
+<a class="navpill" href="../index.html#contact">Contact</a>
+</div>
+<a class="cta" href="../index.html#contact" style="padding: 10px 18px">Let’s talk <span aria-hidden="true">↗</span></a>
+</nav>
+
+<a href="../index.html#ai" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: #AFC5F8; font-weight: 600">← Back to AI &amp; Automation</a>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px"><span class="pill"><i style="border-radius: 50%; background: #6E92F2"></i>Working system</span><span class="eyebrow">Case study</span></div>
+<h1 class="sora" style="margin: 0; font-size: clamp(32px, 4.6vw, 60px); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; max-width: 820px">AI-assisted job-search system</h1>
+<p style="margin: 18px 0 0; font-size: clamp(16px, 1.4vw, 18px); color: #AFC5F8; max-width: 680px">A personal workflow for finding relevant roles, tailoring application materials, and tracking applications in one place.</p>
+
+<dl style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; margin: 32px 0 0">
+<div style="border: 1px solid #1A3BB0; border-radius: 18px; padding: 16px 18px; background: #0F2270"><dt class="lbl">My role</dt><dd style="margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4">Built it and use it for my own search</dd></div>
+<div style="border: 1px solid #1A3BB0; border-radius: 18px; padding: 16px 18px; background: #0F2270"><dt class="lbl">Tools</dt><dd style="margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4">Claude, Notion</dd></div>
+<div style="border: 1px solid #1A3BB0; border-radius: 18px; padding: 16px 18px; background: #0F2270"><dt class="lbl">Where I search</dt><dd style="margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4">Match’up, Welcome to the Jungle, company sites</dd></div>
+</dl>
+
+<!-- VIEWER -->
+<section class="viewer" aria-label="Workflow viewer" style="margin-top: 40px; border: 1px solid #1A3BB0; border-radius: 28px; background: #071039; overflow: hidden">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 12px; padding: 12px 14px; border-bottom: 1px solid #1A3BB0; background: #071039">
+<div role="group" aria-label="Viewer mode" style="display: flex; gap: 4px; padding: 4px; border-radius: 999px; border: 1px solid #1A3BB0">
+<button type="button" class="tab" data-action="showSplit" aria-pressed="true" style="background: #1A3BB0; color: #E6EDFD; border: 1px solid #2E5DE6">Split</button>
+<button type="button" class="tab" data-action="showPreview" aria-pressed="false" style="background: transparent; color: #AFC5F8; border: 1px solid transparent">Diagram</button>
+<button type="button" class="tab" data-action="showCode" aria-pressed="false" style="background: transparent; color: #AFC5F8; border: 1px solid transparent">Notes</button>
+</div>
+<span style="font-size: 12px; color: #6E92F2">Process notes, not code — no screenshots shared yet.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap">
+<div data-if="showPreviewPane" style="display:contents">
+<div style="flex: 1.2 1 340px; min-width: 0; padding: clamp(16px, 2.4vw, 28px); background: #2E5DE6; display: flex; align-items: center">
+<ol style="list-style: none; margin: 0; padding: 16px; width: 100%; border-radius: 14px; background: #E6EDFD; box-shadow: 0 24px 48px rgba(7,16,57,0.4); display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; color: #071039; font-size: 14px; font-weight: 600">
+<li style="padding: 14px; border-radius: 10px; background: #AFC5F8"><b style="display: block; font-size: 11px; color: #1A3BB0">01</b>Find roles</li>
+<li style="padding: 14px; border-radius: 10px; background: #AFC5F8"><b style="display: block; font-size: 11px; color: #1A3BB0">02</b>Check fit</li>
+<li style="padding: 14px; border-radius: 10px; background: #AFC5F8"><b style="display: block; font-size: 11px; color: #1A3BB0">03</b>Tailor CV &amp; letter</li>
+<li style="padding: 14px; border-radius: 10px; background: #6E92F2"><b style="display: block; font-size: 11px; color: #0F2270">04</b>Track &amp; follow up</li>
+</ol>
+</div>
+</div>
+<div data-if="showCodePane" style="display:contents">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; background: #071039">
+<div style="display: flex; align-items: center; padding: 0 12px; background: #0F2270; border-bottom: 1px solid #1A3BB0"><span class="code" style="font-size: 12px; padding: 10px 12px; color: #E6EDFD; border-bottom: 2px solid #6E92F2">workflow.md</span></div>
+<div class="code" style="padding: 16px 16px 16px 0; font-size: 12.5px; line-height: 1.85; display: grid; grid-template-columns: 40px minmax(0, 1fr); align-content: start; white-space: pre-wrap; overflow-wrap: anywhere">
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">1</span><span style="color: #6E92F2"># Job-search workflow</span>
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">2</span><span>- Find: Match’up, Welcome to the Jungle, company sites</span>
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">3</span><span>- Check fit: alternance contract, English-friendly</span>
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">4</span><span>- Tailor: Claude drafts from my current CV</span>
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">5</span><span>- Review: I read every line before sending</span>
+<span style="color: #6E92F2; text-align: right; padding-right: 12px">6</span><span>- Track: Notion → Opportunities, Applications, Tasks</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="goal-h" style="margin-top: 72px; display: flex; flex-wrap: wrap; gap: 16px 64px">
+<h2 id="goal-h" class="sh" style="flex: 0 1 220px; margin: 0">1. The goal</h2>
+<p class="sora" style="flex: 1 1 420px; min-width: 0; margin: 0; font-size: clamp(18px, 1.9vw, 24px); line-height: 1.45; font-weight: 500">Apply for alternance roles across several sectors without losing track of where I applied, what I sent, and who I need to follow up with.</p>
+</section>
+
+<section aria-labelledby="appr-h" style="margin-top: 64px">
+<h2 id="appr-h" class="sh">2. My approach</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+<li class="box step"><div class="sora" style="font-size: 13px; font-weight: 600; color: #6E92F2; margin-bottom: 16px">01</div><h3>Find</h3><p>Alternance offers on OMNES Match’up, Welcome to the Jungle and company career sites — business development, operations, retail, hospitality and luxury.</p></li>
+<li class="box step"><div class="sora" style="font-size: 13px; font-weight: 600; color: #6E92F2; margin-bottom: 16px">02</div><h3>Check fit</h3><p>Is it a real alternance contract? Does the team work in English or welcome English speakers?</p></li>
+<li class="box step"><div class="sora" style="font-size: 13px; font-weight: 600; color: #6E92F2; margin-bottom: 16px">03</div><h3>Tailor</h3><p>Claude helps me adapt my CV and cover letter to the role, always starting from my current CV. I review everything before sending.</p></li>
+<li class="box step" style="border-color: #6E92F2"><div class="sora" style="font-size: 13px; font-weight: 600; color: #6E92F2; margin-bottom: 16px">04</div><h3>Track</h3><p>Each opportunity and application goes into my Notion command centre, with tasks for follow-ups and replies.</p></li>
+</ol>
+</section>
+
+<section style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px">
+<div class="box" aria-labelledby="works-h">
+<h2 id="works-h" class="sh" style="margin-bottom: 12px">3. What works</h2>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px">
+<li>Finding and shortlisting alternance offers across several sectors</li>
+<li>Tailored CV and cover-letter drafts based on my current CV</li>
+<li>One place to track applications, replies and follow-ups</li>
+</ul>
+</div>
+<div class="box" aria-labelledby="next-h">
+<h2 id="next-h" class="sh" style="margin-bottom: 12px">4. Limits &amp; next steps</h2>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px">
+<li>It doesn’t apply for me — every application is reviewed and sent by hand.</li>
+<li>Next: use the same tracking for the international opportunities I’m exploring in parallel.</li>
+</ul>
+</div>
+</section>
+
+<a class="next" href="../index.html#ai" style="margin-top: 72px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border: 1px solid #1A3BB0; border-radius: 28px; padding: clamp(20px, 3vw, 32px); background: #0F2270">
+<div style="min-width: 0"><span class="lbl">Next project</span><span class="sora" style="display: block; font-size: clamp(20px, 3vw, 36px); font-weight: 600; line-height: 1.2">Notion career command centre</span></div>
+<span style="width: 56px; height: 56px; border-radius: 50%; background: #2E5DE6; color: #E6EDFD; display: flex; align-items: center; justify-content: center; font-size: 22px; flex: none" aria-hidden="true">→</span>
+</a>
+
+<footer style="margin-top: 64px; padding-top: 24px; border-top: 1px solid #1A3BB0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #6E92F2"><span>© 2026 Farhan Labib Shishir</span><a href="https://github.com/frhnshishir-dotcom" style="color: #AFC5F8; padding: 12px 0">GitHub ↗</a></footer>
+</main>
+</div>
+</div>
+
+
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
