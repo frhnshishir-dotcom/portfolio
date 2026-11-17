@@ -1,0 +1,116 @@
+/* No z-index and no opacity here: the face plane must blend with the photograph. */
+.portal {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.plane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 540px;
+  height: 856px;
+  border-radius: 32px;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* own compositor layers: measured smoother, and Chrome re-rasters them sharp at rest */
+  will-change: transform;
+}
+
+.plane > * {
+  position: absolute;
+  inset: 0;
+}
+
+/* ------------------------------------------------------------------ body
+ * Starts as an exact stand-in for the photographed card (its colours were
+ * sampled from the hero image), so the hand-over is invisible. */
+.body {
+  overflow: hidden;
+  opacity: var(--body, 0);
+  background: linear-gradient(
+    180deg,
+    #4e4c65 0%,
+    #5b5568 10%,
+    #544e5e 30%,
+    #4c444d 45%,
+    #3c363a 55%,
+    #312c31 63%,
+    #1f202b 66%,
+    #1a1b27 70%,
+    #131621 85%,
+    #121521 100%
+  );
+  box-shadow:
+    inset 0 0 0 1.5px rgb(170 196 255 / 0.35),
+    inset 0 2px 0 rgb(255 255 255 / 0.18);
+}
+
+.body .bodyArt {
+  color: #c9cedb;
+}
+
+.body .bodyArt img[data-face='logo'] {
+  opacity: 0.92;
+}
+
+/* a long diagonal reflection that sweeps across while the card turns */
+.sheen {
+  inset: -30% -60%;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    rgb(170 200 255 / 0.1) 45%,
+    rgb(220 235 255 / 0.32) 50%,
+    rgb(170 200 255 / 0.1) 55%,
+    transparent 62%
+  );
+  transform: translateX(calc(var(--sheen, -1) * 70%));
+  mix-blend-mode: screen;
+}
+
+/* ------------------------------------------------------------------ face */
+.face {
+  opacity: var(--light, 0);
+  mix-blend-mode: screen;
+}
+
+.glow {
+  filter: blur(9px) brightness(1.6);
+  color: #8fc0ff;
+}
+
+.crisp {
+  color: #f4f8ff;
+  opacity: 0.9;
+}
+
+.glow img,
+.crisp img {
+  filter: drop-shadow(0 0 8px rgb(110 170 255 / 0.8));
+}
+
+/* ------------------------------------------------------------------ rim */
+.rim {
+  opacity: var(--rim, 0);
+  color: #bfe0ff;
+}
+
+.rimHalo {
+  color: #3d8bff;
+  filter: blur(calc(var(--rim-glow, 6) * 1px));
+  opacity: 0.95;
+}
+
+.rimLine {
+  filter: drop-shadow(0 0 3px #5aa8ff);
+}
+
+/* ------------------------------------------------------------------ fill */
+.fill {
+  opacity: var(--fill, 0);
+  background: radial-gradient(120% 90% at 50% 45%, #ffffff 55%, #eaf3ff 100%);
+  box-shadow: 0 0 calc(40px + var(--fill, 0) * 120px) rgb(140 190 255 / calc(var(--fill, 0) * 0.9));
+}

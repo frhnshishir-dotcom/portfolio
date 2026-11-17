@@ -11,6 +11,8 @@ index.html                       Homepage: hero, AI & Automation, Social Media &
                                  Creative Experiments, About, Contact
 projects/job-search-system.html  Case study: AI-assisted job-search system
 assets/site.js                   Mobile menu, contact-form checks, case-study viewer tabs
+revolut-nigeria/                 Revolut × Nigeria: cinematic two-screen intro for a university
+                                 presentation (Vite + React; see its own README)
 ```
 
 Plain HTML and CSS with one small script. No build step, no dependencies. Fonts load from Google Fonts (Sora, Manrope, JetBrains Mono). Colours come from the Ultramarine palette: `#071039`, `#0F2270`, `#1A3BB0`, `#2E5DE6`, `#6E92F2`, `#AFC5F8`, `#E6EDFD`.

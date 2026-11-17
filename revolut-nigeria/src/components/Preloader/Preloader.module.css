@@ -1,0 +1,82 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: grid;
+  place-items: center;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.centre {
+  display: grid;
+  justify-items: center;
+  gap: 1.75rem;
+}
+
+.mask {
+  overflow: hidden;
+  line-height: 1;
+}
+
+.mask > * {
+  display: block;
+  will-change: transform;
+}
+
+.wordmark {
+  width: clamp(7.5rem, 5.5rem + 6vw, 11rem);
+  height: auto;
+}
+
+.rule {
+  width: clamp(7.5rem, 5.5rem + 6vw, 11rem);
+  height: 1px;
+  background: var(--color-line);
+  overflow: hidden;
+}
+
+.rule i {
+  display: block;
+  height: 100%;
+  background: var(--color-ink);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.meta {
+  position: absolute;
+  inset: auto var(--gutter) var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.meta > :last-child {
+  justify-self: end;
+}
+
+.count {
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+}
+
+@media (max-width: 40rem) {
+  .meta {
+    grid-template-columns: 1fr auto;
+  }
+
+  .meta > :last-child {
+    display: none;
+  }
+
+  .meta > :nth-child(2) {
+    justify-self: end;
+  }
+}

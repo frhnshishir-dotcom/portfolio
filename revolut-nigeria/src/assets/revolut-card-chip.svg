@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 130" width="118" height="130" role="img" aria-label="Card chip">
+  <!-- EMV-style contact plate, drawn for a portrait card (contact rows top and bottom). -->
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6EBC4"/>
+      <stop offset="0.28" stop-color="#D9C07A"/>
+      <stop offset="0.52" stop-color="#F2E3B0"/>
+      <stop offset="0.76" stop-color="#B8974C"/>
+      <stop offset="1" stop-color="#E7D49A"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3B2A06" stop-opacity="0.18"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="1" y="1" width="116" height="128" rx="17"/></clipPath>
+  </defs>
+  <rect x="1" y="1" width="116" height="128" rx="17" fill="url(#plate)"/>
+  <rect x="1" y="1" width="116" height="128" rx="17" fill="url(#sheen)"/>
+  <g clip-path="url(#clip)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- engraved gaps: a light edge, then the dark channel -->
+    <g stroke="#FFF7D6" stroke-opacity="0.7" stroke-width="1.2" transform="translate(0.9 0.9)">
+      <path d="M0 43h31.5c3.3 0 6-2.7 6-6V0M118 43H86.5c-3.3 0-6-2.7-6-6V0M59 0v33"/>
+      <path d="M0 87h31.5c3.3 0 6 2.7 6 6v37M118 87H86.5c-3.3 0-6 2.7-6 6v37M59 130V97"/>
+      <path d="M0 65h30M118 65H88"/>
+      <rect x="30" y="33" width="58" height="64" rx="11"/>
+    </g>
+    <g stroke="#5E4712" stroke-opacity="0.85" stroke-width="1.5">
+      <path d="M0 43h31.5c3.3 0 6-2.7 6-6V0M118 43H86.5c-3.3 0-6-2.7-6-6V0M59 0v33"/>
+      <path d="M0 87h31.5c3.3 0 6 2.7 6 6v37M118 87H86.5c-3.3 0-6 2.7-6 6v37M59 130V97"/>
+      <path d="M0 65h30M118 65H88"/>
+      <rect x="30" y="33" width="58" height="64" rx="11"/>
+    </g>
+  </g>
+  <rect x="1" y="1" width="116" height="128" rx="17" fill="none" stroke="#6B531C" stroke-opacity="0.55" stroke-width="1.2"/>
+  <rect x="2.4" y="2.4" width="113.2" height="125.2" rx="15.6" fill="none" stroke="#FFF9E0" stroke-opacity="0.5" stroke-width="0.8"/>
+</svg>

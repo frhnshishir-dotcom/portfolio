@@ -1,0 +1,80 @@
+.face {
+  position: relative;
+  width: var(--face-w);
+  height: var(--face-h);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  user-select: none;
+}
+
+.rim,
+.logo,
+.chip,
+.details,
+.tag {
+  position: absolute;
+}
+
+.rim {
+  inset: var(--rim-inset);
+  border: var(--rim-width) solid currentColor;
+  border-radius: var(--rim-radius);
+}
+
+.logo {
+  left: var(--logo-x);
+  top: var(--logo-y);
+  width: var(--logo-w);
+  height: auto;
+}
+
+.chip {
+  left: var(--chip-x);
+  top: var(--chip-y);
+  width: var(--chip-w);
+  height: var(--chip-h);
+}
+
+.details {
+  left: var(--details-x);
+  bottom: var(--details-bottom);
+  display: grid;
+  gap: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.holder {
+  font-size: 21px;
+  letter-spacing: 0.16em;
+}
+
+.number {
+  font-size: 23px;
+  letter-spacing: 0.14em;
+}
+
+.tag {
+  right: var(--tag-right);
+  bottom: var(--tag-bottom);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+}
+
+.tagDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-green-bright);
+}
+
+/* Flat source for the render textures: pure white artwork on transparent. */
+.print .tagDot {
+  background: currentColor;
+}

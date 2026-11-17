@@ -1,0 +1,66 @@
+/* Global design tokens.
+   The Lagos photograph carries the Nigerian identity; the card and the interface
+   carry the brand. Green is an accent only. */
+:root {
+  /* colour */
+  --color-white: #ffffff;
+  --color-paper: #ffffff;
+  --color-ink: #0a0e1a;
+  --color-midnight: #0b1530;
+  --color-midnight-deep: #050a18;
+  --color-blue: #0075eb;
+  --color-blue-electric: #5aa8ff;
+  --color-blue-ice: #cfe6ff;
+  --color-green: #008751;
+  --color-green-bright: #27c281;
+  --color-muted: #5b6475;
+  --color-line: rgb(10 14 26 / 0.12);
+  --color-line-light: rgb(255 255 255 / 0.22);
+
+  /* type */
+  --font-sans: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --text-micro: 0.6875rem; /* 11 */
+  --text-small: 0.8125rem; /* 13 */
+  --text-body: clamp(0.9375rem, 0.88rem + 0.2vw, 1.0625rem);
+  --text-lead: clamp(1rem, 0.92rem + 0.35vw, 1.1875rem);
+  --text-hero: clamp(2.5rem, 1.1rem + 5.4vw, 6.25rem);
+  --text-display: clamp(3.25rem, 0.5rem + 11.2vw, 13rem);
+
+  --tracking-tight: -0.045em;
+  --tracking-snug: -0.02em;
+  --tracking-caps: 0.14em;
+
+  /* space */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --gutter: clamp(1.25rem, 3.2vw, 3rem);
+  --nav-height: clamp(4rem, 3.4rem + 1.6vw, 5.25rem);
+
+  /* shape */
+  --radius-pill: 999px;
+  --radius-card: 1.25rem;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 180ms;
+  --duration-base: 420ms;
+  --duration-slow: 900ms;
+
+  /* layers */
+  --z-stage: 0;
+  --z-portal: 10;
+  --z-copy: 20;
+  --z-reveal: 30;
+  --z-nav: 40;
+  --z-preloader: 60;
+  --z-cursor: 80;
+}

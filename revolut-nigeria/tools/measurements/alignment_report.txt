@@ -1,0 +1,8 @@
+  1440x900  scale 0.3620  IoU 0.9973  area 1.0006  centroid shift (+0.03, +0.02) px  pixels off by >50%: 5
+ 1920x1080  scale 0.4703  IoU 0.9966  area 0.9995  centroid shift (+0.28, +0.01) px  pixels off by >50%: 8
+ 2560x1080  scale 0.6270  IoU 0.9973  area 0.9988  centroid shift (-0.10, +0.02) px  pixels off by >50%: 22
+  1024x768  scale 0.3089  IoU 0.9965  area 1.0004  centroid shift (+0.15, +0.02) px  pixels off by >50%: 6
+   390x844  scale 0.3197  IoU 0.9955  area 1.0018  centroid shift (-0.24, -0.00) px  pixels off by >50%: 4
+   360x640  scale 0.2424  IoU 0.9952  area 1.0023  centroid shift (+0.18, -0.01) px  pixels off by >50%: 3
+   844x390  scale 0.2067  IoU 0.9935  area 1.0038  centroid shift (-0.05, -0.04) px  pixels off by >50%: 3
+PASS

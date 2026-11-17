@@ -1,0 +1,126 @@
+.pill {
+  --pill-bg: var(--color-white);
+  --pill-ink: var(--color-ink);
+  --pill-line: transparent;
+  --chip-bg: var(--color-ink);
+  --chip-ink: var(--color-white);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  height: 3.25rem;
+  padding: 0 1.5rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--pill-line);
+  background: var(--pill-bg);
+  color: var(--pill-ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+}
+
+.pill[data-icon] {
+  padding-right: 0.375rem;
+}
+
+.pill[data-variant='glass'] {
+  --pill-bg: rgb(255 255 255 / 0.1);
+  --pill-ink: var(--color-white);
+  --pill-line: rgb(255 255 255 / 0.32);
+  --chip-bg: var(--color-white);
+  --chip-ink: var(--color-ink);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.pill[data-variant='ink'] {
+  --pill-bg: var(--color-ink);
+  --pill-ink: var(--color-white);
+  --chip-bg: var(--color-blue);
+  --chip-ink: var(--color-white);
+}
+
+.pill:hover,
+.pill:focus-visible {
+  transform: translateY(-1px);
+}
+
+.pill[data-variant='glass']:hover,
+.pill[data-variant='glass']:focus-visible {
+  --pill-bg: rgb(255 255 255 / 0.18);
+  --pill-line: rgb(255 255 255 / 0.6);
+}
+
+.pill:active {
+  transform: translateY(0) scale(0.985);
+}
+
+/* ---- label roll */
+.roll {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  height: 1.3em;
+  line-height: 1.3;
+}
+
+.label {
+  grid-area: 1 / 1;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.label + .label {
+  transform: translateY(110%);
+}
+
+.pill:hover .label,
+.pill:focus-visible .label {
+  transform: translateY(-110%);
+}
+
+.pill:hover .label + .label,
+.pill:focus-visible .label + .label {
+  transform: translateY(0);
+}
+
+/* ---- icon chip */
+.chip {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--chip-bg);
+  color: var(--chip-ink);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.chip > span {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* the plus turns a quarter; the account glyph only lifts */
+.pill[data-icon='plus']:hover .chip,
+.pill[data-icon='plus']:focus-visible .chip {
+  transform: rotate(90deg) scale(1.06);
+}
+
+.pill[data-icon='account']:hover .chip,
+.pill[data-icon='account']:focus-visible .chip {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill,
+  .label,
+  .chip {
+    transition-duration: 0.01ms;
+  }
+}
