@@ -16,32 +16,18 @@
   "s": "1"
  },
  {
-  "t": "1006 Eiffel tower night illumination by Pierre Bideau in Paris Photo by Giles Laurent.jpg",
-  "a": "Photo: © Giles Laurent / Illumination: © Pierre Bideau, concepteur Lumière, pour",
-  "l": "CC BY-SA 4.0",
-  "u": "https://commons.wikimedia.org/wiki/File:1006_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg",
-  "s": "6"
- },
- {
-  "t": "Tokyo Tower Lit at Dusk with Surrounding Modern Skyscrapers - Ed Stuurman.jpg",
-  "a": "Ed Stuurman",
-  "l": "CC BY 4.0",
-  "u": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_Lit_at_Dusk_with_Surrounding_Modern_Skyscrapers_-_Ed_Stuurman.jpg",
-  "s": "6"
- },
- {
-  "t": "Kit Kat.jpg",
-  "a": "ArionStar",
-  "l": "CC0",
-  "u": "https://commons.wikimedia.org/wiki/File:Kit_Kat.jpg",
-  "s": "2"
+  "t": "KitKatUK2008.JPG",
+  "a": "Cyberdemon007 (talk)",
+  "l": "Public domain",
+  "u": "https://commons.wikimedia.org/wiki/File:KitKatUK2008.JPG",
+  "s": "2, 6"
  },
  {
   "t": "Kit-Kat-Split.jpg",
   "a": "Evan-Amos",
   "l": "Public domain",
   "u": "https://commons.wikimedia.org/wiki/File:Kit-Kat-Split.jpg",
-  "s": "2, 3, 6"
+  "s": "3"
  },
  {
   "t": "KitKat opened.jpg",
@@ -63,13 +49,6 @@
   "l": "CC BY-SA 4.0",
   "u": "https://commons.wikimedia.org/wiki/File:Kit_Kat_Matcha-9136.jpg",
   "s": "3"
- },
- {
-  "t": "Japanese Kit Kat Bar.JPG",
-  "a": "Ktr101",
-  "l": "CC BY-SA 4.0",
-  "u": "https://commons.wikimedia.org/wiki/File:Japanese_Kit_Kat_Bar.JPG",
-  "s": "6"
  },
  {
   "t": "KitKat Sakura Matcha split (16466348192).jpg",
@@ -100,18 +79,25 @@
   "s": "4"
  },
  {
+  "t": "Nescafé Cup Winter.jpg",
+  "a": "Albertyanks  Albert Jankowski",
+  "l": "Public domain",
+  "u": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_Cup_Winter.jpg",
+  "s": "2, 4, 6"
+ },
+ {
+  "t": "Coffee from a steel kettle (Unsplash).jpg",
+  "a": "Annie Spratt anniespratt",
+  "l": "CC0",
+  "u": "https://commons.wikimedia.org/wiki/File:Coffee_from_a_steel_kettle_(Unsplash).jpg",
+  "s": "4"
+ },
+ {
   "t": "Café au lait 1.JPG",
   "a": "Touzrimounir",
   "l": "CC BY-SA 4.0",
   "u": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_au_lait_1.JPG",
   "s": "4"
- },
- {
-  "t": "Instant Coffee Grains Inside Jar.jpeg",
-  "a": "SAM31416",
-  "l": "CC BY-SA 4.0",
-  "u": "https://commons.wikimedia.org/wiki/File:Instant_Coffee_Grains_Inside_Jar.jpeg",
-  "s": "2"
  },
  {
   "t": "Vista cenital de un surtido de cápsulas Nescafé Dolce Gusto.jpg",
@@ -133,13 +119,6 @@
   "l": "CC BY 2.0",
   "u": "https://commons.wikimedia.org/wiki/File:NESCAFE_(96552190).jpg",
   "s": "4"
- },
- {
-  "t": "Nescafé Cup Winter.jpg",
-  "a": "Albertyanks  Albert Jankowski",
-  "l": "Public domain",
-  "u": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_Cup_Winter.jpg",
-  "s": "2, 6"
  },
  {
   "t": "Shinjuku Station South Entrance area at night, Tokyo, Japan (2015-01-24 by calvision @Pixabay 617590).jpg",
@@ -174,7 +153,7 @@
   "a": "Andrea_Nguyen",
   "l": "CC BY 2.0",
   "u": "https://commons.wikimedia.org/wiki/File:Pot-au-feu_ingr%C3%A9dients.jpg",
-  "s": "2, 5"
+  "s": "5"
  },
  {
   "t": "Pot-au-feu---2024-08-08.jpg",
@@ -188,6 +167,48 @@
   "a": "MaedaAkihiko",
   "l": "CC BY-SA 4.0",
   "u": "https://commons.wikimedia.org/wiki/File:Pot-au-feu_soup.jpg",
+  "s": "5"
+ },
+ {
+  "t": "Vegetable-Carrot-Bundle-wStalks.jpg",
+  "a": "Evan-Amos",
+  "l": "Public domain",
+  "u": "https://commons.wikimedia.org/wiki/File:Vegetable-Carrot-Bundle-wStalks.jpg",
+  "s": "5"
+ },
+ {
+  "t": "Onion on White.JPG",
+  "a": "Colin",
+  "l": "CC BY-SA 3.0",
+  "u": "https://commons.wikimedia.org/wiki/File:Onion_on_White.JPG",
+  "s": "5"
+ },
+ {
+  "t": "Bay Leaves.JPG",
+  "a": "Miansari66",
+  "l": "Public domain",
+  "u": "https://commons.wikimedia.org/wiki/File:Bay_Leaves.JPG",
+  "s": "5"
+ },
+ {
+  "t": "Bouquet garni p1150476 extracted.jpg",
+  "a": "David Monniaux",
+  "l": "CC BY-SA 3.0",
+  "u": "https://commons.wikimedia.org/wiki/File:Bouquet_garni_p1150476_extracted.jpg",
+  "s": "5"
+ },
+ {
+  "t": "Leek on white background - 0947.jpg",
+  "a": "Amada44",
+  "l": "CC BY-SA 4.0",
+  "u": "https://commons.wikimedia.org/wiki/File:Leek_on_white_background_-_0947.jpg",
+  "s": "5"
+ },
+ {
+  "t": "Opened garlic bulb with garlic clove.jpg",
+  "a": "Dubravko Sorić SoraZG on Flickr",
+  "l": "CC BY 2.0",
+  "u": "https://commons.wikimedia.org/wiki/File:Opened_garlic_bulb_with_garlic_clove.jpg",
   "s": "5"
  },
  {

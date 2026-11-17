@@ -1,14 +1,16 @@
-/* Shared choreography for the three France × Japan comparison slides.
-   Each brand slide passes its own "character": KitKat snaps, Nescafé pours
-   slowly, Maggi simmers — the structure stays the same so the audience
-   always knows where France and Japan are. */
+/* Reusable France × Japan comparison choreography (v1).
+   The three brand slides now have bespoke cinematic timelines, but this kit
+   is kept for the analytical comparison slides to come (packaging, pricing,
+   distribution…): NFJ.splitSlide("packaging", { character, items }) builds
+   a slide with the same France-then-Japan structure and glass divider.
+   It is not used by the current six slides. */
 (function () {
   "use strict";
   const { $, $$ } = NFJ;
   const M = NFJ.motion;
 
-  NFJ.splitSlide = function (index, cfg) {
-    const el = $(`[data-slide="${index + 1}"]`);
+  NFJ.splitSlide = function (id, cfg) {
+    const el = $(`[data-slide-id="${id}"]`);
     const idle = NFJ.idleBag();
     const q = (s) => $(s, el);
     const parts = {
@@ -20,7 +22,7 @@
     };
     const animated = cfg.items.map((it) => it.el = q(it.sel)).concat(cfg.items.map((it) => it.shadow && (it.shadowEl = q(it.shadow))));
 
-    NFJ.registerSlide(index, {
+    NFJ.registerSlide(id, {
       el,
       reset() {
         idle.kill();

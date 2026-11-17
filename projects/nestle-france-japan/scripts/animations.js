@@ -9,7 +9,7 @@
   "use strict";
 
   const NFJ = (window.NFJ = window.NFJ || {});
-  NFJ.slides = NFJ.slides || [];
+  NFJ.slideModules = NFJ.slideModules || {};
 
   const M = (NFJ.motion = {
     // Durations (seconds) — match the brief's recommended ranges
@@ -26,9 +26,11 @@
     reduced: false
   });
 
-  /** Register a slide module: { el, reset(), enter() -> timeline, idle(), stop() } */
-  NFJ.registerSlide = function (index, mod) {
-    NFJ.slides[index] = mod;
+  /** Register a slide module by id: { el, reset(), enter() -> timeline, idle(), stop(), parts? }.
+      Order is decided by scripts/deck.config.js, never by the module. */
+  NFJ.registerSlide = function (id, mod) {
+    if (NFJ.slideModules[id]) console.warn(`[deck] slide "${id}" registered twice`);
+    NFJ.slideModules[id] = mod;
   };
 
   const $ = (NFJ.$ = (sel, root) => (root || document).querySelector(sel));

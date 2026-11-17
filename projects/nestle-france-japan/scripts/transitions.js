@@ -1,161 +1,143 @@
 /* =========================================================================
-   Scene-to-scene transitions. The six slides are six scenes of one film:
-   every forward step has its own reason, and the shared FX layer (#fx)
-   carries the bridge between them.
+   Scene-to-scene transitions, keyed by slide ids ("from>to").
+   Every forward step between the six visual slides is motivated by the
+   story; any other pair (going back, jumping, or — later — moving to and
+   from the analytical slides) uses the neutral glass-sheet transition.
 
-     1 → 2  logo bridge     cities recede, the Nestlé logo carries us into the portfolio
-     2 → 3  brand takeover  the KitKat card's red expands into its own campaign
-     3 → 4  chocolate→coffee a cocoa iris closes, a light sweep reveals the coffee world
-     4 → 5  steam           warm vapour rises from the coffee and clears onto the kitchen
-     5 → 6  convergence     three brand bars rise, then gather to the centre
-     else   glass sheet     a pane of frosted glass sweeps across (back / jump)
+     opening>portfolio  the smoked-glass title plate expands towards the camera
+                        and becomes the dark showroom
+     portfolio>kitkat   KitKat takes the hero spot and rushes forward; its red
+                        becomes the bridge into the face-off
+     kitkat>nescafe     chocolate red warms into coffee darkness
+     nescafe>maggi      coffee vapour rises and turns gold
+     maggi>finale       product and ingredients recede into darkness
 
-   Each function returns a GSAP timeline and calls ctx.swap() once, at the
-   moment the incoming slide must take over.
+   Each returns a timeline and calls ctx.swap() exactly once, at the moment
+   the incoming slide takes over. Kept to ~0.9–1.5 s for live delivery.
    ========================================================================= */
 (function () {
   "use strict";
   const { $, $$ } = NFJ;
   const M = NFJ.motion;
-  const stage = $("#stage");
   const fx = $("#fx");
-  const veil = $(".fx-veil", fx), bars = $$(".fx-bars span", fx), barsWrap = $(".fx-bars", fx);
-  const sheet = $(".fx-sheet", fx), band = $(".fx-band", fx), fxLogo = $(".fx-logo", fx);
-
-  /** Rect of an element in stage (1920×1080) coordinates. */
-  function stageRect(el) {
-    const s = stage.getBoundingClientRect();
-    const r = el.getBoundingClientRect();
-    const k = s.width / 1920;
-    return { x: (r.left - s.left) / k, y: (r.top - s.top) / k, w: r.width / k, h: r.height / k };
-  }
+  const veil = $(".fx-veil", fx), sheet = $(".fx-sheet", fx), band = $(".fx-band", fx);
 
   function resetFx() {
-    gsap.set([veil, barsWrap, sheet, band, fxLogo], { clearProps: "all" });
-    gsap.set(bars, { clearProps: "all" });
+    gsap.set([veil, sheet, band], { clearProps: "all" });
+  }
+
+  /** A soft-edged iris: the veil is revealed through a radial mask whose radius (--r) grows. */
+  function iris(at) {
+    const m = `radial-gradient(circle at ${at}, #000 var(--r), transparent calc(var(--r) + 22%))`;
+    return { "--r": "0%", WebkitMaskImage: m, maskImage: m };
   }
 
   const T = {};
 
-  /* 1 → 2 · Cities to portfolio, bridged by the Nestlé logo */
-  T["0>1"] = function (from, to, ctx) {
+  /* The title plate comes towards the camera and fills the frame. */
+  T["opening>portfolio"] = function (from, to, ctx) {
     const p = from.parts;
-    const r = stageRect(p.logo);
     const tl = gsap.timeline({ defaults: { ease: M.inOut } });
-    tl.set(fxLogo, { autoAlpha: 1, x: r.x, y: r.y, width: r.w })
-      .set(p.logo, { autoAlpha: 0 })
-      .to([p.title, p.sub, p.meta], { autoAlpha: 0, y: -14, filter: "blur(6px)", duration: 0.5, stagger: 0.05, ease: "power2.in" }, 0)
-      .to(p.plate, { autoAlpha: 0, "--blur": "0px", scale: 0.97, duration: 0.7, ease: "power2.in" }, 0.15)
-      .to(p.tags, { autoAlpha: 0, duration: 0.4 }, 0)
-      .to(p.seam, { yPercent: 110, duration: 0.9, ease: "power3.in" }, 0.1)
-      // The two cities recede into depth, away from each other.
-      .to(p.paris, { x: -180, scale: 0.9, filter: "brightness(0.25) blur(6px)", duration: 1.1, ease: "power3.inOut", transformOrigin: "30% 50%" }, 0.15)
-      .to(p.tokyo, { x: 180, scale: 0.9, filter: "brightness(0.25) blur(6px)", duration: 1.1, ease: "power3.inOut", transformOrigin: "70% 50%" }, 0.15)
-      // The logo rises to the centre of the frame, then hands over to the brands.
-      .to(fxLogo, { x: 960 - r.w * 0.5, y: 470, scale: 1.55, filter: "drop-shadow(0 0 24px rgba(255,255,255,0.35))", duration: 1.0, ease: "power3.inOut" }, 0.2)
-      .add(ctx.swap, 0.95)
-      .set(from.el, { autoAlpha: 0 }, 1.2)
-      .to(fxLogo, { scale: 0.7, y: 380, autoAlpha: 0, filter: "drop-shadow(0 0 0 rgba(255,255,255,0)) blur(6px)", duration: 0.9, ease: "power2.in" }, 1.25);
+    tl.to([p.logo, p.title, p.sub, p.meta], { autoAlpha: 0, y: -10, duration: 0.3, ease: "power2.in" }, 0)
+      .to(p.tags, { autoAlpha: 0, duration: 0.25 }, 0)
+      .to(p.seam, { autoAlpha: 0, duration: 0.3 }, 0)
+      .to(p.motes, { autoAlpha: 0, duration: 0.3 }, 0)
+      .to(p.plate, { scale: 3.6, y: -250, "--tint": 0.97, "--blur": "34px", duration: 0.9, ease: "power3.in" }, 0.05)
+      .add(ctx.swap, 0.92)
+      .set(from.el, { autoAlpha: 0 }, 0.93);
     return tl;
   };
 
-  /* 2 → 3 · The KitKat card becomes the KitKat campaign */
-  T["1>2"] = function (from, to, ctx) {
-    const cards = from.parts.cards;
-    const kk = cards[0].card;
-    const r = stageRect(kk);
-    const R = 1920, B = 1080;
-    const inset = (x, y, w, h, rad) => `inset(${y}px ${R - x - w}px ${B - y - h}px ${x}px round ${rad}px)`;
+  /* KitKat to the front, then into a red iris. */
+  T["portfolio>kitkat"] = function (from, to, ctx) {
+    const p = from.parts;
+    const tl = gsap.timeline({ defaults: { ease: M.inOut } });
+    let t = 0;
+    if (p.hero() !== "kitkat") {
+      tl.add(from.select("kitkat", { duration: 0.55 }) || gsap.timeline(), 0);
+      t = 0.55;
+    }
+    const kk = p.items.kitkat;
+    tl.to([p.title, p.sub, p.tabsBox, p.caption], { autoAlpha: 0, duration: 0.3, ease: "power2.in" }, t)
+      .to([p.items.nescafe, p.items.maggi], { autoAlpha: 0, scale: 0.45, duration: 0.45, ease: "power2.in" }, t)
+      .to(kk, { scale: 2.3, y: "-=180", duration: 0.85, ease: "power3.in" }, t + 0.05)
+      .set(veil, {
+        autoAlpha: 1,
+        background: "radial-gradient(circle at 50% 56%, #d0122d 0%, #8c0a1c 38%, #2a0408 75%, #030406 100%)",
+        ...iris("50% 56%")
+      }, t + 0.25)
+      .to(veil, { "--r": "130%", duration: 0.67, ease: "power2.in" }, t + 0.25)
+      .add(ctx.swap, t + 0.92)
+      .set(from.el, { autoAlpha: 0 }, t + 0.93)
+      .to(veil, { autoAlpha: 0, duration: 0.55, ease: "power2.out" }, t + 0.95);
+    return tl;
+  };
+
+  /* Chocolate red warms into coffee darkness. */
+  T["kitkat>nescafe"] = function (from, to, ctx) {
     const tl = gsap.timeline({ defaults: { ease: M.inOut } });
     tl.set(veil, {
       autoAlpha: 1,
-      background: "radial-gradient(60% 70% at 50% 60%, #c3112b 0%, #7d0617 55%, #2a0308 100%)",
-      clipPath: inset(r.x, r.y, r.w, r.h, 30)
+      background: "radial-gradient(circle at 50% 60%, #7a2a18 0%, #3c1a0d 40%, #1a0f08 75%, #0b0604 100%)",
+      ...iris("50% 62%")
     })
-      .set(veil, { autoAlpha: 0 })
-      .to([from.parts.title, from.parts.sub, from.parts.hint], { autoAlpha: 0, y: -12, duration: 0.45, ease: "power2.in" }, 0)
-      .to([cards[1].card, cards[2].card], { autoAlpha: 0, scale: 0.94, y: 30, duration: 0.55, stagger: 0.06, ease: "power2.in" }, 0)
-      .to(kk, { scale: 1.03, duration: 0.5, ease: "power2.out" }, 0)
-      .to(veil, { autoAlpha: 1, duration: 0.35, ease: "none" }, 0.25)
-      .to(veil, { clipPath: inset(0, 0, R, B, 0), duration: 0.95, ease: "expo.inOut" }, 0.35)
-      .add(ctx.swap, 1.25)
-      .set(from.el, { autoAlpha: 0 }, 1.26)
-      .to(veil, { autoAlpha: 0, duration: 1.1, ease: "power2.out" }, 1.35);
+      .to(from.el, { scale: 1.04, duration: 0.8, ease: "power2.in" }, 0)
+      .to(veil, { "--r": "140%", duration: 0.8, ease: "power3.in" }, 0.05)
+      .add(ctx.swap, 0.86)
+      .set(from.el, { autoAlpha: 0 }, 0.87)
+      .to(veil, { autoAlpha: 0, duration: 0.6, ease: "power2.out" }, 0.9);
     return tl;
   };
 
-  /* 3 → 4 · Chocolate closes into coffee; a light sweep reveals the new scene */
-  T["2>3"] = function (from, to, ctx) {
+  /* Coffee vapour rises and turns gold. */
+  T["nescafe>maggi"] = function (from, to, ctx) {
     const tl = gsap.timeline({ defaults: { ease: M.inOut } });
     tl.set(veil, {
       autoAlpha: 1,
-      background: "radial-gradient(circle at 49% 58%, #6a3a1e 0%, #3a1f10 38%, #1a0d06 70%, #0c0603 100%)",
-      clipPath: "circle(0% at 49% 58%)"
-    })
-      .to(from.el, { scale: 1.05, duration: 1.0, ease: "power2.in" }, 0)
-      .to(veil, { clipPath: "circle(120% at 49% 58%)", duration: 1.0, ease: "power3.in" }, 0.05)
-      .add(ctx.swap, 1.05)
-      .set(from.el, { autoAlpha: 0 }, 1.06)
-      .set(band, { autoAlpha: 1, x: -700 }, 1.05)
-      .to(veil, { autoAlpha: 0, duration: 1.2, ease: "power2.out" }, 1.15)
-      .to(band, { x: 2300, duration: 1.5, ease: "power2.inOut" }, 1.05)
-      .to(band, { autoAlpha: 0, duration: 0.3 }, 2.3);
-    return tl;
-  };
-
-  /* 4 → 5 · Steam rises out of the coffee and clears onto the kitchen */
-  T["3>4"] = function (from, to, ctx) {
-    const tl = gsap.timeline({ defaults: { ease: M.inOut } });
-    tl.set(veil, {
-      autoAlpha: 1,
-      top: "-35%", bottom: "-35%",
-      background: "linear-gradient(0deg, #3a200d 0%, #7a4c1d 30%, #b98a2a 55%, #d9b44a 75%, #7a5a1a 100%)",
-      WebkitMaskImage: "linear-gradient(0deg, transparent 0%, #000 18%, #000 82%, transparent 100%)",
-      maskImage: "linear-gradient(0deg, transparent 0%, #000 18%, #000 82%, transparent 100%)",
+      top: "-40%", bottom: "-40%",
+      background: "linear-gradient(0deg, #1a0f08 0%, #4a2a10 30%, #8a5c16 52%, #5a3a0c 72%, #050302 100%)",
+      WebkitMaskImage: "linear-gradient(0deg, transparent 0%, #000 20%, #000 80%, transparent 100%)",
+      maskImage: "linear-gradient(0deg, transparent 0%, #000 20%, #000 80%, transparent 100%)",
       yPercent: 100
     })
-      .to(from.el, { y: -40, duration: 1.0, ease: "power2.in" }, 0)
-      .to(veil, { yPercent: 0, duration: 1.0, ease: "power2.in" }, 0)
-      .add(ctx.swap, 1.0)
-      .set(from.el, { autoAlpha: 0 }, 1.01)
-      .to(veil, { yPercent: -100, duration: 1.3, ease: "power2.out" }, 1.0);
+      .to(from.el, { y: -30, duration: 0.75, ease: "power2.in" }, 0)
+      .to(veil, { yPercent: 0, duration: 0.75, ease: "power2.in" }, 0)
+      .add(ctx.swap, 0.76)
+      .set(from.el, { autoAlpha: 0 }, 0.77)
+      .to(veil, { yPercent: -100, duration: 0.7, ease: "power2.out" }, 0.78);
     return tl;
   };
 
-  /* 5 → 6 · Three brand colours rise, then converge to one point */
-  T["4>5"] = function (from, to, ctx) {
-    const colors = ["#a5122a", "#3a1f10", "#d9a400"];
+  /* The Maggi set recedes into darkness; the finale begins from charcoal. */
+  T["maggi>finale"] = function (from, to, ctx) {
+    const p = from.parts;
     const tl = gsap.timeline({ defaults: { ease: M.inOut } });
-    tl.set(barsWrap, { autoAlpha: 1 });
-    bars.forEach((b, i) => gsap.set(b, { background: `linear-gradient(180deg, ${colors[i]}, ${gsap.utils.interpolate(colors[i], "#05090f", 0.55)})`, scaleY: 0, transformOrigin: "50% 100%" }));
-    tl.to(from.el, { scale: 0.96, duration: 0.9, ease: "power2.in" }, 0)
-      .to(bars, { scaleY: 1, duration: 0.8, stagger: 0.12, ease: "power3.inOut" }, 0)
-      .add(ctx.swap, 1.05)
-      .set(from.el, { autoAlpha: 0 }, 1.06)
-      .set(bars[0], { transformOrigin: "100% 50%" }, 1.05)
-      .set(bars[1], { transformOrigin: "50% 50%" }, 1.05)
-      .set(bars[2], { transformOrigin: "0% 50%" }, 1.05)
-      .to(bars, { scaleX: 0, duration: 1.05, ease: "expo.inOut" }, 1.1)
-      .to(bars, { autoAlpha: 0, duration: 0.3 }, 1.9);
+    tl.to(p.ings, { scale: 0.6, autoAlpha: 0, y: "+=40", duration: 0.6, stagger: 0.04, ease: "power2.in" }, 0)
+      .to([p.tin, p.kub], { scale: 0.85, autoAlpha: 0, y: "+=30", duration: 0.7, ease: "power2.in" }, 0.1)
+      .set(veil, { autoAlpha: 0, background: "#08090b" }, 0)
+      .to(veil, { autoAlpha: 1, duration: 0.55, ease: "power1.in" }, 0.35)
+      .add(ctx.swap, 0.92)
+      .set(from.el, { autoAlpha: 0 }, 0.93)
+      .to(veil, { autoAlpha: 0, duration: 0.45, ease: "none" }, 0.95);
     return tl;
   };
 
-  /* Default · a pane of frosted glass sweeps across (backwards or jumps) */
+  /* Neutral · a pane of frosted glass sweeps across (back, jumps, analytical slides). */
   T.sheet = function (from, to, ctx) {
     const dir = ctx.dir;
     const startX = dir > 0 ? -900 : 2100, endX = dir > 0 ? 2100 : -900;
     const tl = gsap.timeline({ defaults: { ease: M.inOut } });
     tl.set(sheet, { autoAlpha: 1, x: startX })
       .set(band, { autoAlpha: 0.9, x: startX - dir * 200 })
-      .to(sheet, { x: endX, duration: 1.3, ease: "power2.inOut" }, 0)
-      .to(band, { x: endX - dir * 200, duration: 1.3, ease: "power2.inOut" }, 0)
-      .to(from.el, { autoAlpha: 0, duration: 0.45, ease: "none" }, 0.35)
-      .add(ctx.swap, 0.6)
-      .to([sheet, band], { autoAlpha: 0, duration: 0.25 }, 1.15);
+      .to(sheet, { x: endX, duration: 1.0, ease: "power2.inOut" }, 0)
+      .to(band, { x: endX - dir * 200, duration: 1.0, ease: "power2.inOut" }, 0)
+      .to(from.el, { autoAlpha: 0, duration: 0.35, ease: "none" }, 0.25)
+      .add(ctx.swap, 0.45)
+      .to([sheet, band], { autoAlpha: 0, duration: 0.2 }, 0.85);
     return tl;
   };
 
-  /* Reduced motion · a short cross-dissolve */
+  /* Reduced motion · a short cross-dissolve. */
   T.reduced = function (from, to, ctx) {
     return gsap.timeline()
       .add(ctx.swap, 0)
@@ -163,10 +145,12 @@
   };
 
   NFJ.transitions = {
-    pick(fromIdx, toIdx) {
+    pick(fromId, toId, dir) {
       if (M.reduced) return T.reduced;
-      return T[`${fromIdx}>${toIdx}`] || T.sheet;
+      return (dir > 0 && T[`${fromId}>${toId}`]) || T.sheet;
     },
+    /** Register a custom transition for a pair of slide ids (for future slides). */
+    define(fromId, toId, fn) { T[`${fromId}>${toId}`] = fn; },
     resetFx
   };
 })();

@@ -340,5 +340,95 @@
   "author": "NESTLE",
   "description": "ancien logo de la marque d'aides culinaires Maggi.",
   "orig_size": "308x197"
+ },
+ "pour_moka": {
+  "file": "pour_moka.jpg",
+  "title": "File:Coffee from a steel kettle (Unsplash).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Coffee_from_a_steel_kettle_(Unsplash).jpg",
+  "license": "CC0",
+  "author": "Annie Spratt anniespratt",
+  "description": "Annie Spratt 2016-02-14",
+  "orig_size": "3000x2000"
+ },
+ "pour_carafe": {
+  "file": "pour_carafe.jpg",
+  "title": "File:Pouring drip croffee into coffee mug (26195835913).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pouring_drip_croffee_into_coffee_mug_(26195835913).jpg",
+  "license": "CC BY 2.0",
+  "author": "Personal Creations",
+  "description": "",
+  "orig_size": "1650x2398"
+ },
+ "ing_carrot": {
+  "file": "ing_carrot.jpg",
+  "title": "File:Vegetable-Carrot-Bundle-wStalks.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vegetable-Carrot-Bundle-wStalks.jpg",
+  "license": "Public domain",
+  "author": "Evan-Amos",
+  "description": "A bundle of carrots with their stalks still attached. Bought from a farmers market in Brooklyn, from an independent farm.",
+  "orig_size": "6700x3800"
+ },
+ "ing_onion": {
+  "file": "ing_onion.jpg",
+  "title": "File:Onion on White.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Onion_on_White.JPG",
+  "license": "CC BY-SA 3.0",
+  "author": "Colin",
+  "description": "An onion on a white background.",
+  "orig_size": "2793x2793"
+ },
+ "ing_bay": {
+  "file": "ing_bay.jpg",
+  "title": "File:Bay Leaves.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Bay_Leaves.JPG",
+  "license": "Public domain",
+  "author": "Miansari66",
+  "description": "Bay leaves, in urdu tez patta, french fuelles de laurer.\nIt is the beauty of Bombay Biryani",
+  "orig_size": "2816x2112"
+ },
+ "ing_bouquet": {
+  "file": "ing_bouquet.jpg",
+  "title": "File:Bouquet garni p1150476 extracted.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bouquet_garni_p1150476_extracted.jpg",
+  "license": "CC BY-SA 3.0",
+  "author": "David Monniaux",
+  "description": "Bouquet garni: thyme, bay leaves, sage",
+  "orig_size": "1112x1061"
+ },
+ "ing_leek": {
+  "file": "ing_leek.png",
+  "title": "File:Leek on a white background.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Leek_on_a_white_background.png",
+  "license": "Public domain",
+  "author": "Craiyon algorithm",
+  "description": "Simply a leek on a white background – this is not a real leek, it is generated with AI.",
+  "orig_size": "1024x1024"
+ },
+ "ing_garlic": {
+  "file": "ing_garlic.jpg",
+  "title": "File:Opened garlic bulb with garlic clove.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Opened_garlic_bulb_with_garlic_clove.jpg",
+  "license": "CC BY 2.0",
+  "author": "Dubravko Sorić SoraZG on Flickr",
+  "description": "A bulb of garlic has been opened and a peeled clove of garlic sits next to it.",
+  "orig_size": "3648x2736"
+ },
+ "kk_red_wrapper": {
+  "file": "kk_red_wrapper.jpg",
+  "title": "File:KitKatUK2008.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:KitKatUK2008.JPG",
+  "license": "Public domain",
+  "author": "Cyberdemon007 (talk)",
+  "description": "A picture showing the latest packaging on a UK Kit Kat.",
+  "orig_size": "3072x2304"
+ },
+ "ing_leek_real": {
+  "file": "ing_leek_real.jpg",
+  "title": "File:Leek on white background - 0947.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Leek_on_white_background_-_0947.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Amada44",
+  "description": "Leek on white background",
+  "orig_size": "2361x3464"
  }
 }

@@ -1,0 +1,314 @@
+/* =========================================================================
+   v2 scene layers — the cinematic additions for each locked direction.
+   All coordinates on the 1920×1080 canvas.
+   ========================================================================= */
+
+/* =========================================================================
+   Opening — darkness, haze, motes, a lit seam, a foreground title plate
+   ========================================================================= */
+
+.s1-dark { background: #02060c; pointer-events: none; }
+.s1-haze { pointer-events: none; mix-blend-mode: screen; opacity: 0.6; }
+.s1-haze--paris { background: radial-gradient(60% 40% at 30% 85%, rgba(140, 170, 220, 0.18), rgba(140, 170, 220, 0) 70%), linear-gradient(0deg, rgba(120, 150, 200, 0.12), rgba(120, 150, 200, 0) 40%); }
+.s1-haze--tokyo { background: radial-gradient(60% 40% at 70% 85%, rgba(255, 170, 110, 0.14), rgba(255, 170, 110, 0) 70%), linear-gradient(0deg, rgba(90, 120, 140, 0.14), rgba(90, 120, 140, 0) 40%); }
+.s1-motes { pointer-events: none; overflow: hidden; }
+.s1-motes span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 236, 200, 0.9), rgba(255, 236, 200, 0));
+  filter: blur(0.5px);
+}
+.s1-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 26%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(214, 228, 255, 0.85) 50%, rgba(255, 255, 255, 0));
+  filter: blur(2px);
+  opacity: 0;
+}
+.s1-plate-wrap { position: absolute; inset: 0; perspective: 1400px; perspective-origin: 50% 70%; pointer-events: none; }
+.s1-plate { transform-style: preserve-3d; }
+
+/* =========================================================================
+   Portfolio — a dark showroom with a hero product and two supporting ones
+   ========================================================================= */
+
+.s2 { background: #05080d; }
+.s2-wall { background: radial-gradient(70% 70% at 50% 40%, #121a26 0%, #0a0f17 55%, #05080d 100%); }
+.s2-light { opacity: 0; mix-blend-mode: screen; pointer-events: none; }
+.s2-light--kitkat { background: radial-gradient(34% 48% at 50% 52%, rgba(216, 21, 47, 0.42), rgba(216, 21, 47, 0) 70%), radial-gradient(60% 40% at 50% 100%, rgba(90, 30, 20, 0.5), rgba(90, 30, 20, 0) 70%); }
+.s2-light--nescafe { background: radial-gradient(34% 48% at 50% 52%, rgba(214, 140, 60, 0.36), rgba(214, 140, 60, 0) 70%), radial-gradient(60% 40% at 50% 100%, rgba(70, 38, 18, 0.55), rgba(70, 38, 18, 0) 70%); }
+.s2-light--maggi { background: radial-gradient(34% 48% at 50% 52%, rgba(255, 196, 40, 0.32), rgba(255, 196, 40, 0) 70%), radial-gradient(60% 40% at 50% 100%, rgba(120, 70, 10, 0.45), rgba(120, 70, 10, 0) 70%); }
+.s2-floor {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: 760px;
+  bottom: 0;
+  background:
+    radial-gradient(50% 60% at 50% 0%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, #0d1219 0%, #07090d 70%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 40px);
+  mask-image: linear-gradient(180deg, transparent 0, #000 40px);
+}
+
+.s2-head { position: absolute; left: 120px; top: 78px; width: 1180px; }
+.s2-title { position: relative; font-size: 84px; }
+.s2-sub { margin: 18px 0 0; font-size: 26px; line-height: 1.4; color: #d5dade; }
+
+.s2-tabs {
+  --radius: 999px;
+  --tint: 0.5;
+  right: 120px;
+  top: 96px;
+  display: flex;
+  padding: 6px;
+  gap: 4px;
+}
+.s2-tab {
+  position: relative;
+  z-index: 2;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #c9ced4;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+.s2-tab[aria-selected="true"] { color: var(--paper); }
+.s2-tab-glow {
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: 100px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.s2-stage { position: absolute; inset: 0; perspective: 1600px; perspective-origin: 50% 55%; pointer-events: none; }
+.s2-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+}
+.s2-item:focus-visible { outline-offset: 12px; }
+.s2-item[data-brand="kitkat"] { width: 620px; }
+.s2-item[data-brand="nescafe"] { width: 400px; }
+.s2-item[data-brand="maggi"] { width: 180px; }
+.s2-prod {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.5));
+}
+.s2-refl {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: auto;
+  transform: scaleY(-1);
+  transform-origin: 50% 0;
+  opacity: 0.16;
+  filter: blur(2px);
+  -webkit-mask-image: linear-gradient(0deg, transparent 55%, #000 100%);
+  mask-image: linear-gradient(0deg, transparent 55%, #000 100%);
+  pointer-events: none;
+}
+.s2-shadow {
+  position: absolute;
+  z-index: 0;
+  left: 6%;
+  right: 6%;
+  bottom: -18px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.s2-cone {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: -10px;
+  width: 260%;
+  height: 230%;
+  transform: translateX(-50%);
+  background: radial-gradient(40% 60% at 50% 100%, rgba(255, 240, 220, 0.16), rgba(255, 240, 220, 0) 70%);
+  pointer-events: none;
+}
+
+.s2-caption {
+  --radius: 22px;
+  left: 50%;
+  bottom: 44px;
+  width: 980px;
+  margin-left: -490px;
+  min-height: 112px;
+  padding: 20px 30px;
+}
+.s2-cap {
+  position: absolute;
+  inset: 20px 30px;
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  align-items: center;
+  column-gap: 28px;
+  opacity: 0;
+  visibility: hidden;
+}
+.s2-cap p { position: relative; margin: 0; padding-left: 40px; font-size: 18px; line-height: 1.42; color: var(--paper); }
+.s2-cap .chip__flag { position: absolute; left: 0; top: 5px; }
+.s2-cap b { display: block; font-family: var(--display); font-weight: 600; font-size: 21px; margin-bottom: 2px; }
+.s2-cap__logo { width: 120px; height: auto; justify-self: center; }
+.s2-cap__logo--nes { width: 150px; }
+.s2-cap__logo--mg { width: 110px; border-radius: 6px; }
+
+/* =========================================================================
+   KitKat — dark stage, rim lights, two product groups
+   ========================================================================= */
+
+.s3-dark { background: radial-gradient(55% 55% at 50% 66%, #1a1c21 0%, #0a0b0e 55%, #030406 100%); pointer-events: none; }
+.s3-rim { position: absolute; top: 0; bottom: 0; width: 60%; pointer-events: none; mix-blend-mode: screen; opacity: 0; }
+.s3-rim--fr { left: 0; background: radial-gradient(45% 45% at 30% 72%, rgba(230, 40, 50, 0.38), rgba(230, 40, 50, 0) 70%), radial-gradient(30% 30% at 35% 70%, rgba(255, 170, 110, 0.25), rgba(255, 170, 110, 0) 70%); }
+.s3-rim--jp { right: 0; background: radial-gradient(45% 45% at 70% 70%, rgba(155, 190, 80, 0.32), rgba(155, 190, 80, 0) 70%), radial-gradient(30% 30% at 65% 70%, rgba(216, 21, 47, 0.2), rgba(216, 21, 47, 0) 70%); }
+.s3-group { position: absolute; inset: 0; pointer-events: none; }
+.s3-group--fr { transform-origin: 470px 790px; }
+.s3-group--jp { transform-origin: 1400px 760px; }
+
+/* =========================================================================
+   Nescafé — a real pour into a real Nescafé mug, then the comparison
+   ========================================================================= */
+
+/* Stable comparison layout, re-spaced around the centre mug */
+.s4-frame-cup { left: 110px; top: 520px; width: 500px; height: 350px; }
+.s4-capsules { width: 250px; left: 450px; top: 770px; }
+.s4-frame-genio { left: 1160px; top: 520px; width: 320px; height: 410px; }
+.s4-frame-vending { left: 1520px; top: 545px; width: 240px; height: 362px; }
+
+.s4-warm {
+  z-index: 6;
+  pointer-events: none;
+  background:
+    radial-gradient(30% 36% at 46% 52%, rgba(214, 140, 60, 0.28), rgba(214, 140, 60, 0) 70%),
+    radial-gradient(60% 60% at 50% 50%, #1a0f08 0%, #0b0604 70%, #050302 100%);
+}
+.s4-cam { position: absolute; inset: 0; z-index: 7; pointer-events: none; transform-origin: 50% 50%; }
+.s4-pot {
+  position: absolute;
+  left: 279px;
+  top: -277px;
+  width: 560px;
+  -webkit-mask-image: linear-gradient(100deg, transparent 8%, #000 52%);
+  mask-image: linear-gradient(100deg, transparent 8%, #000 52%);
+  transform-origin: 98% 80%;
+}
+.s4-pot img { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
+.s4-pot__body { position: relative !important; filter: brightness(0.92) contrast(1.05); }
+.s4-pot__stream { filter: saturate(1.1) brightness(0.9); }
+.s4-hero { position: absolute; left: 840px; top: 640px; width: 300px; z-index: 2; transform-origin: 50% 50%; }
+.s4-hero__mug { position: relative; z-index: 2; width: 100%; height: auto; filter: drop-shadow(0 30px 34px rgba(0, 0, 0, 0.6)); }
+.s4-hero__shadow { left: -8%; right: 0; bottom: -16px; height: 46px; z-index: 1; }
+.steam.s4-steam { left: 4%; top: -46%; width: 66%; height: 60%; z-index: 3; }
+
+/* =========================================================================
+   Maggi — hero tin, orbiting ingredients, warm gold light
+   ========================================================================= */
+
+.s5-dark { background: #050302; pointer-events: none; }
+.s5-tin { z-index: 4; }
+.s5-kub { z-index: 3; }
+.s5-shadow-tin { z-index: 2; }
+.s5-ings { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.s5-ings--front { z-index: 5; }
+.s5-ing { position: absolute; height: auto; filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.5)); will-change: transform; }
+.s5-ing--carrot { width: 290px; left: 560px; top: 560px; transform: rotate(-18deg); }
+.s5-ing--leek { width: 190px; left: 10px; top: 560px; transform: rotate(-22deg); }
+.s5-ing--bouquet { width: 210px; left: 690px; top: 800px; transform: rotate(14deg); }
+.s5-ing--onion { width: 150px; left: 410px; top: 905px; }
+.s5-ing--garlic { width: 175px; left: 40px; top: 915px; }
+.s5-ing--bay { width: 58px; left: 820px; top: 640px; transform: rotate(32deg); }
+.s5-light { z-index: 1; }
+
+/* =========================================================================
+   Finale — charcoal, a spotlight, three products, one sentence
+   ========================================================================= */
+
+.s6 { background: #08090b; }
+.s6-world { transform-origin: 50% 60%; will-change: transform; }
+.s6-spot {
+  background:
+    radial-gradient(42% 62% at 50% 64%, rgba(255, 238, 214, 0.1), rgba(255, 238, 214, 0) 70%),
+    radial-gradient(80% 80% at 50% 40%, #121418 0%, #08090b 70%);
+}
+.s6-floor {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: 820px;
+  bottom: -10%;
+  background: radial-gradient(40% 50% at 50% 0%, rgba(255, 235, 210, 0.08), rgba(255, 235, 210, 0) 70%), linear-gradient(180deg, #0e0f12, #060708);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 30px);
+  mask-image: linear-gradient(180deg, transparent 0, #000 30px);
+}
+.s6-pool { position: absolute; top: 430px; width: 420px; height: 470px; border-radius: 50%; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(closest-side, rgba(255, 240, 220, 0.14), rgba(255, 240, 220, 0)); }
+.s6-pool--mug { left: 420px; }
+.s6-pool--kk { left: 780px; top: 450px; }
+.s6-pool--mg { left: 1130px; top: 380px; }
+.s6-mug { width: 260px; left: 500px; top: 548px; }
+.s6-kk { width: 500px; left: 745px; top: 512px; z-index: 3; }
+.s6-mg { width: 132px; left: 1272px; top: 396px; }
+.s6-sh-mug { width: 280px; height: 40px; left: 490px; top: 804px; }
+.s6-sh-kk { width: 470px; height: 46px; left: 760px; top: 800px; }
+.s6-sh-mg { width: 170px; height: 34px; left: 1255px; top: 806px; }
+
+.s6-text { position: absolute; left: 0; right: 0; top: 104px; text-align: center; }
+.s6-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 500;
+  font-variation-settings: "opsz" 32;
+  font-size: 96px;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.s6-title .line { display: block; }
+.s6-sweep {
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  left: -30%;
+  width: 22%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 246, 230, 0.55), rgba(255, 255, 255, 0));
+  mix-blend-mode: overlay;
+  transform: skewX(-14deg);
+  opacity: 0;
+  pointer-events: none;
+}
+.s6-sub { margin: 22px 0 0; font-size: 26px; color: #d9dde2; letter-spacing: 0.01em; }
+.s6-logo { position: absolute; left: 50%; bottom: 70px; width: 160px; margin-left: -80px; }

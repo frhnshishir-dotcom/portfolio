@@ -1,6 +1,7 @@
 /* =========================================================================
-   Boot: scale the stage, preload every image (so nothing pops in during a
-   transition), fit headlines, then start on the slide in the URL hash.
+   Boot: scale the stage, preload every image (nothing pops in during a
+   transition), fit headlines, then start on the slide named in the URL
+   (#nescafe, or a number such as #4).
    ========================================================================= */
 (function () {
   "use strict";
@@ -14,18 +15,15 @@
   window.addEventListener("resize", scaleStage);
   scaleStage();
 
-  // Progress dots
+  // Progress dots follow the configured sequence.
   const progress = $("#progress");
-  for (let i = 0; i < NFJ.nav.total; i++) {
+  NFJ.nav.order.forEach((id, i) => {
     const b = document.createElement("button");
     b.className = "chrome__dot";
     b.setAttribute("aria-label", `Go to slide ${i + 1}`);
     b.addEventListener("click", () => NFJ.nav.go(i));
     progress.appendChild(b);
-  }
-
-  // Hide every slide's content until its entrance runs.
-  NFJ.slides.forEach((s) => s.reset());
+  });
 
   const imgs = $$("img", stage);
   const bar = $(".loader__bar i");
@@ -41,11 +39,14 @@
 
   Promise.race([Promise.all([fonts, ...imgs.map(decode)]), timeout]).then(() => {
     NFJ.fitText(stage);
+    // Every slide starts from its initial (hidden) state.
+    NFJ.nav.order.forEach((id) => NFJ.slideModules[id].reset());
     $("#loader").classList.add("is-done");
-    const fromHash = parseInt((location.hash || "").replace("#", ""), 10);
-    const start = fromHash >= 1 && fromHash <= NFJ.nav.total ? fromHash - 1 : 0;
+    const h = decodeURIComponent((location.hash || "").replace("#", ""));
+    const n = parseInt(h, 10);
+    const byId = NFJ.nav.order.indexOf(h);
+    const start = byId >= 0 ? byId : n >= 1 && n <= NFJ.nav.total ? n - 1 : 0;
     NFJ.nav.go(start);
-    // Show the controls briefly so the presenter knows where they are.
     document.body.classList.add("chrome-awake");
     setTimeout(() => document.body.classList.remove("chrome-awake"), 3500);
     document.documentElement.dataset.ready = "1";

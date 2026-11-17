@@ -1,99 +1,99 @@
-# Quality report
+# Quality report (v2: cinematic enhancement)
 
-## 1. What the original deck contained
+## 1. Starting point
 
-`source/NESTLE-FRANCE-JAPAN_original.pptx` was a Gamma export: six slides, a dark navy theme and a "Made with Gamma" badge on every slide.
-I inspected it by rendering every slide and pulling every media file.
+**The original PowerPoint** (`source/`, unchanged, SHA-256 `5ebcfe1c…a122ac0cd`) was a Gamma export with six slides.
 
-| Slide | Problems found |
-|---|---|
-| 1 | The Paris/Tokyo background was an AI-generated composite, with a large AI-generated chocolate wrapper in the foreground that covered the title area. |
-| 2 | Three small identical thumbnails (936×531). All three were AI-generated with **fake packaging** (a KitKat bar beside a coffee pot, and a "Maggi" pouch with an invented design). |
-| 3 | Both images were AI-generated near-identical scenes (cup + coffee pot + bar). Neither showed real French or Japanese KitKat products. |
-| 4 | The headline was clipped ("ONE COFFE…"). The images were AI-generated with **misspelled packaging** ("NESFFEE"). |
-| 5 | The images were AI-generated with **coffee pots and chocolate on a Maggi slide** and no real Maggi product. |
-| 6 | The headline was clipped ("ADAPT LOCALL…"). The image was AI-generated with fabricated packs ("Klagii", "KitKet"). |
+- Every image in it was AI-generated, with invented packaging ("Klagii", "KitKet", "NESFFEE") and coffee pots on the Maggi slide.
+- Two headlines were clipped: "ONE COFFE…" on slide 4 and "ADAPT LOCALL…" on slide 6.
+- Its text, structure and dark direction are the authoritative content and are preserved.
+- Its imagery is not used, because the brief forbids invented packaging and inaccurate AI designs.
 
-None of the original imagery was authentic, so **none of it was kept**. The text, six-slide structure, headlines and dark direction were preserved.
+**v1** (commit `b3242d9`) replaced all imagery with authentic Wikimedia Commons photographs and built the HTML deck. v2 keeps those assets and compositions and adds:
 
-## 2. What replaced it
+- the locked cinematic directions for each slide;
+- connected transitions;
+- an id-based architecture ready for 12 slides.
 
-All photographs are real photographs from Wikimedia Commons, with author, licence and source recorded in `docs/ASSET_REGISTER.md`.
-They are graded in CSS to one dark, warm cinematic look. Product photos were cut out with rembg and layered over the scenes with contact shadows.
+## 2. What changed in v2
 
-| Slide | New visual story |
-|---|---|
-| 1 | Paris at blue hour (Eiffel Tower, Pont des Invalides) and Tokyo at blue hour (Tokyo Tower), joined by a diagonal sheet of glass. The two towers rhyme across the seam. A dark glass title plate carries the Nestlé wordmark and title. |
-| 2 | An exhibition of three tall brand worlds. Each has a brand photograph, a cut-out hero product, the real logo and a glass label. Click or tap one to open its France / Japan comparison. |
-| 3 | France: a Paris café terrace with the classic four-finger bar, plus a wafer close-up in the foreground. Japan: the KitKat Chocolatory in Shibuya, with the **Uji Matcha gift box**, a **matcha bar** (Otona no Amasa) and **Sakura Matcha**, all genuine Japanese products. |
-| 4 | France: a Paris terrace, café au lait in a Nescafé cup with CSS steam, and Dolce Gusto capsules. Japan: Shinjuku at night, a **Dolce Gusto Genio in a Japanese home**, and a **Nescafé vending machine in Japan**. |
-| 5 | France: pot-au-feu ingredients, with the **Maggi France "Bouillon gras"** and **Bouillon Kub** tins. Japan: a Japanese home-style potofu and consommé pot-au-feu, with a glass identifier "マギー ブイヨン · Maggi Bouillon". |
-| 6 | Paris and Tokyo meet behind one table: a Nescafé mug, a Maggi bottle, a classic KitKat and a Japanese matcha KitKat. The two-beat statement sits on a single glass surface, then the camera pulls back to the Nestlé wordmark. |
-
-## 3. Accuracy notes (read before presenting)
-
-- **Maggi in Japan is real but not pictured.** Nestlé Japan press releases (2019 price change, 2023 allergen note, 2025 "Chef Magic" launch) confirm
-  that **Maggi Bouillon** is sold in Japan, and that Maggi was introduced there in 1927 for hotel chefs. No licensable photo of the current Japanese pack
-  could be verified, so the slide shows Japanese potofu instead and says so in a footnote.
-- **The French Maggi packs are historic tins**, and the caption says so. No licensable photo of current French Maggi or Kub packaging was found.
-- **The French KitKat is the product, not French packaging.** The classic four-finger bar is shown unwrapped (photographed in the US).
-  Its form is the same as the classic bar sold in France, and no claim is made about the pack.
-- **The Dolce Gusto capsules on slide 4** were photographed in Spain. The caption describes the French habit and does not claim a French photo.
-- **The Maggi bottle** (slides 2 and 6) carries a German "Würze" label. It is used as a global brand icon only.
-- **Nescafé Japan**: Gold Blend is confirmed on Japanese retail listings. The Genio photo and the vending machine are from Japan.
-- **Not done**: official Nestlé, KitKat, Nescafé and Maggi websites were unreachable from the build environment, so no official packshots were used.
-  If you have access, swapping in official French and Japanese packshots for Maggi and the French KitKat would strengthen slides 3 and 5.
-- No AI-generated imagery or invented packaging is used anywhere.
-
-## 4. Glass system
-
-Glass is reserved for the functional layer: city and market labels, product captions, the Maggi identifier, the title plates, the seam and the dividers, and the controls.
-Photographs and products are never placed inside glass.
-
-- The deep tint (`--tint` 0.55–0.6) is used where text is read. The near-clear tint is used only for framing.
-- Each surface has an 18 px backdrop blur with 150% saturation, a fine 1 px border ring, an inner top highlight and a soft drop shadow.
-- **Motion**: glass materialises (blur 0 → 18 px, a clip reveal and a slight scale). Light then travels once along the border (`--edge-x`) and a reflection drifts across the surface (`--sheen-x`).
-  While a slide is idle, this light passes again only every 6–9 s.
-- There is no glass on glass, and no neon. Text on glass is always full-strength paper white.
-
-## 5. Motion system
-
-| Scene → scene | Transition | Why |
+| Slide | Locked direction | Implementation |
 |---|---|---|
-| 1 → 2 | The cities recede in depth, and the Nestlé logo lifts to the centre and hands over to the brands | From the corporate group to its consumer brands |
-| 2 → 3 | The KitKat card's red expands from the card's exact shape to full frame | From the portfolio into a dedicated campaign |
-| 3 → 4 | A cocoa-brown iris closes over the chocolate, then a light sweep reveals the coffee world | A sensory change of category |
-| 4 → 5 | A warm amber-to-gold vapour rises out of the coffee scene and clears onto the kitchen | Coffee warmth becomes Maggi's palette |
-| 5 → 6 | KitKat red, Nescafé coffee and Maggi yellow rise as three bars, then converge to the centre | Three brands return as one portfolio |
-| back / jump | A pane of frosted glass sweeps across | Predictable and neutral |
+| 1 | Dynamic, premium glass, dramatic | The timeline follows the brief: darkness and silhouettes (0–0.8 s); the cities arrive from opposite sides on separate camera moves (0.8–2.0 s); a light sweeps the glass seam (1.5–2.6 s); the smoked-glass plate arrives from the foreground, from perspective depth Z = 520 px with a slight tilt (2.2–3.5 s); masked title stages (3.0–4.5 s). Stable state: only faint motes and very slow drift. |
+| 2 | Product exhibition, central hero, 3D-style movement | A dark showroom with perspective, a floor, reflections and brand-coloured light. The hero is centred at full size; supporting products sit at 60% scale, rotated ±16°, dimmed and set back. Selecting a brand (product, tab or keyboard) moves it to centre while the previous hero takes the vacated slot, in one 0.95 s arc. Lighting, tab highlight and caption follow. KitKat is hero on every arrival. |
+| 3 | 3D product battle | A dark stage with silhouettes. France enters from the left and Japan from the right, then red and matcha rim light catch them and they briefly face off near the centre. The camera pulls back to reveal the original café and Chocolatory comparison. The products are flat photographic layers, never distorted. |
+| 4 | Cinematic coffee | A real moka-pot pour (CC0 photo, split into pot and stream layers) pours into the **genuine Nescafé mug**, whose logo is printed on the cup itself. The stream is revealed top to bottom and disappears behind the rim. Then steam, a push-in toward the logo, and a pull-back where the mug becomes the centre anchor between Paris and Tokyo. |
+| 5 | Product showcase | The Maggi France tin emerges from darkness into warm gold light. Real ingredient photographs (carrot, leek, onion, garlic, bay, bouquet garni) travel in coordinated elliptical arcs, with depth scaling, around it. All settle around the French tins; Japan shows potofu and the Maggi Bouillon identifier. |
+| 6 | Premium minimalist finale | Charcoal and a spotlight. Silhouettes are lit one at a time; then two-beat statement, one light sweep, Nestlé logo, and a 6 s pull-back that then **stops** (no idle loops). |
 
-- **Within scenes**: masked word reveals with a letter-spacing settle; the cities reveal along polygon seams; split scenes show France first, then Japan, with the glass divider drawing down.
-- **Brand character**: each brand has its own product motion. KitKat snaps into place (back-out ease), Nescafé pours slowly (long ease, 1.7 s image reveals), and Maggi simmers (expo settle, a pulsing warm light).
-- **Durations**: text 0.6–1.1 s, products 0.9–1.4 s, images 1.3–1.8 s, transitions about 1.3–2.3 s, ambient loops 7–12 s, and a 4.6 s closing pull-back.
-- **Reduced motion**: transitions become a 0.4 s dissolve, entrances resolve instantly and loops are off. This follows the OS setting or the toggle.
+**Transitions** run 0.9–1.5 s and are keyed by slide-id pairs:
+- the plate grows toward the camera and becomes the showroom;
+- KitKat comes forward inside a soft red bloom;
+- chocolate red warms into coffee;
+- coffee vapour rises into gold;
+- the Maggi set recedes into darkness;
+- any other pair, including back and jump navigation, uses a frosted-glass sheet.
 
-## 6. Testing done (headless Chromium via Playwright)
+**Architecture**:
+- Slide order lives only in `scripts/deck.config.js`, and slides register by id.
+- The counter, progress bar, ARIA labels and URL hashes follow the sequence.
+- A second press during a transition is ignored, so there is no double navigation.
+- Every arrival resets its slide, and **R** replays it.
 
-- **Screenshots**: every slide at 1920×1080 after its entrance (`docs/screenshots/`), plus 1366×768, 2560×1440, 1280×1024 and a 390×844 phone.
-  The phone is letterboxed and shows a rotate hint.
-- **Text clipping**: a check of every headline, caption and label's rendered text bounds against its own box and the canvas found **no clipping on any slide**.
-  The Nescafé and closing headlines are set on two controlled lines, and an automatic fit guard shrinks any headline that would overflow.
-- **Transitions**: frames were captured at 150, 450, 800, 1150, 1600 and 2400 ms for all five forward transitions.
-  Two defects were found and fixed:
-  - Applying a CSS filter to a whole slide produced a black frame at the start of a transition.
-  - The outgoing slide showed through the incoming slide's unrevealed half.
-- **Rapid input**: 8 key presses in 400 ms, then mixed left/right presses, ended on the expected slide every time. There was exactly one active slide, no stuck state, no overlapping slides, and the counter and URL hash were correct.
-  This found and fixed a bug where presses during a transition counted from the old slide.
-- **Interaction**: tested hover, click, touch tap (tablet emulation), Escape to close, and the `aria-expanded` state on slide 2. Narrowed cards hide their category text so labels never clip.
-- **Other checks**: reduced motion (OS emulation); opening from `file://` (all fonts and images load, no errors); no console or page errors in any run.
-- **Walkthrough**: `docs/walkthrough.mp4` (42 s, 1280×720, H.264, silent) records the whole deck, including the slide 2 focus interaction.
-- **PowerPoint backup**: it renders correctly in LibreOffice. The original PowerPoint's SHA-256 is unchanged
-  (`5ebcfe1c…a122ac0cd`).
+## 3. Asset accuracy
 
-## 7. Known limitations
+- **Removed during QA:** a leek image whose Commons author is "Craiyon algorithm" (AI-generated). It was replaced with a real photograph, and every register entry was then screened for AI-generation markers (none left).
+  The walkthrough video was re-recorded after the swap.
+- **Nescafé cup:** the brief's mandatory logo-on-cup is met with a photograph of a real Nescafé mug. There is no overlaid or warped logo.
+- **Pour:** a composite of two real photographs. The pot is unbranded, and no fluid was simulated.
+- **Red KitKat pack** (slides 2 and 6): genuine, but a UK pack (2008). It is used only as a global brand icon and never labelled as French.
+- **Maggi Japan:** confirmed by Nestlé Japan press releases (Maggi Bouillon sold in Japan; introduced in 1927 for hotel chefs). No Japanese pack photo could be verified, so none is shown, and the slide says so.
+- Full source, licence and verification notes for every image are in `docs/ASSET_REGISTER.md`.
 
-- Most product photographs are amateur Commons photos, not studio packshots. They are cut out, graded and lit to sit together, but official packshots would look sharper.
-- The Japanese vending-machine photo exists only as a 330 px preview (the original was rate-limited), so it is shown small.
-- Backdrop blur is GPU work. On very old integrated graphics, turn on Reduce motion if transitions stutter.
-- No video was used: no licensable, authentic coffee-pouring clip was found, so the steam is a light CSS effect.
-- The static PowerPoint is a backup of the final compositions. Its slides are images (with alt text and speaker notes), not editable text boxes.
+## 4. Verification (headless Chromium, Playwright)
+
+- **Every slide** was captured initial → mid-animation → settled → exit → return.
+  Exact intermediate states were checked by pausing the GSAP timelines and seeking to precise times.
+- **Settled frames at 1920×1080:** a rendered-text-bounds check found no clipped text on any slide and no horizontal overflow.
+  The only flag is the decorative sweep element inside the slide 6 headline, which is masked by the headline box.
+- **Slide 2 interaction:** product click and tab click both swap correctly; ARIA states update; leaving with Maggi as hero first brings KitKat forward.
+- **Navigation:**
+  - a double press of → moved exactly one slide;
+  - returning to slides 5, 4, 3 and 2 rebuilt them cleanly, with KitKat restored as hero;
+  - **R** replays the current slide.
+- **Interleaving test:** a dummy analytical slide injected between KitKat and Nescafé:
+  - the deck became 7 slides ("4 / 7", `#packaging`, "Slide 4 of 7");
+  - the glass-sheet fallback was used in both directions;
+  - a missing id was skipped with a console warning.
+- **Other checks:**
+  - reduced motion (OS setting) gives instant stable compositions and 0.4 s dissolves;
+  - 1366×768, 2560×1440 and 1280×1024 letterbox with no scroll;
+  - `file://` loads all fonts, including the Japanese glyphs;
+  - no console or page errors in any run.
+- **Bugs found and fixed during QA:**
+  - the 3D stage layer was blocking clicks on the brand tabs;
+  - the KitKat face-off overlapped and its silhouettes were unreadable;
+  - the red iris had a hard edge (now a soft radial mask);
+  - the leek overlapped a caption;
+  - the finale products were undersized;
+  - the AI-generated leek (see above).
+- **Deliverables checked:**
+  - `docs/walkthrough.mp4`: 44.6 s, 1280×720, H.264, full decode (1,339 frames) with no errors.
+  - Static PowerPoint: 6 slides, renders in LibreOffice.
+
+## 5. Needs manual review
+
+1. **Official packshots.** Official Nestlé, KitKat, Nescafé and Maggi sites were unreachable from the build environment. Swapping in official packshots would raise sharpness and market accuracy, especially:
+   - the French KitKat pack (currently an unwrapped classic bar);
+   - current French Maggi / Kub packaging (currently historic tins);
+   - a current Japanese Maggi Bouillon pack (currently not shown).
+2. **UK KitKat wrapper** on slides 2 and 6. It is authentic but from 2008 ("only 107 calories"). A current KitKat pack photo would be preferable if you have one you're allowed to use.
+3. **Maggi bottle** on slides 2 and 6 has a German "Würze" label. It is fine as a global icon; replace it if your tutor expects French-market packaging.
+4. **Nescafé vending machine** is only a 330 px preview (the original was rate-limited), so it is shown small.
+5. **Facts to confirm with your own sources before presenting:**
+   - "Kitto Katsu" good-luck gifting;
+   - Dolce Gusto's popularity in France;
+   - Gold Blend and home machines in Japan;
+   - Maggi in Japanese hotel kitchens since 1927 (from Nestlé Japan's 2025 press release).
+6. **Performance:** backdrop blur and large images are GPU work. On an older laptop, rehearse once in the actual room's browser; if a transition stutters, turn on **Reduce motion**.
+7. **The six analytical slides** are not created (by design). See `docs/ADDING_SLIDES.md`.
