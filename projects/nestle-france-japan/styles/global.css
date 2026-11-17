@@ -327,3 +327,11 @@ body.chrome-awake .chrome { opacity: 1; }
   .chrome { opacity: 0.35; }
   .stage { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 }
+
+/* Phones held sideways: the stage fills the short screen, so the control bar
+   would sit on the slide's bottom lines. Hide it until a touch wakes it
+   (any tap also moves on; the bar then stays usable for a few seconds). */
+@media (hover: none) and (max-height: 500px) {
+  .chrome { opacity: 0; pointer-events: none; }
+  body.chrome-awake .chrome { opacity: 1; pointer-events: auto; }
+}
