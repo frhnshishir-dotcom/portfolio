@@ -1,0 +1,92 @@
+{
+ "A1_kitkat_crimson-tabletop": {
+  "direction": "High-angle tabletop on dark chocolate surface, crimson light pool, red bokeh",
+  "test": "A",
+  "products": [
+   {
+    "item": "KitKat 4-finger red wrapper (authentic, UK)",
+    "source": "kk_red_wrapper_x4.png",
+    "sharpness": 154.2,
+    "ssim_vs_source": 0.975
+   },
+   {
+    "item": "KitKat classic bar, snapped (authentic)",
+    "source": "kk_split_x4.png",
+    "sharpness": 1127.3,
+    "ssim_vs_source": 0.952
+   }
+  ]
+ },
+ "A2_kitkat_bar-macro": {
+  "direction": "Macro tabletop, classic bar as hero, wrapper defocused behind",
+  "test": "A",
+  "products": [
+   {
+    "item": "KitKat classic bar, snapped — hero (authentic)",
+    "source": "kk_split_x4.png",
+    "sharpness": 538.3,
+    "ssim_vs_source": 0.905
+   }
+  ]
+ },
+ "B1_nescafe_beans-amber": {
+  "direction": "Mug hero on real roasted beans, amber key light, steam",
+  "test": "B",
+  "products": [
+   {
+    "item": "Nescafé red mug (authentic, logo printed on cup)",
+    "source": "nes_red_mug_x4.png",
+    "sharpness": 218.5,
+    "ssim_vs_source": 0.983
+   }
+  ]
+ },
+ "B2_nescafe_night-cafe": {
+  "direction": "Mug on dark gloss counter, warm café bokeh, steam",
+  "test": "B",
+  "products": [
+   {
+    "item": "Nescafé red mug (authentic, logo printed on cup)",
+    "source": "nes_red_mug_x4.png",
+    "sharpness": 233.4,
+    "ssim_vs_source": 0.98
+   }
+  ]
+ },
+ "C1_maggi-golden-still-life": {
+  "direction": "Warm golden studio, tin + bottle with pot-au-feu ingredients, gentle steam",
+  "test": "C",
+  "products": [
+   {
+    "item": "Maggi France 'Bouillon gras' tin (authentic, historic)",
+    "source": "maggi_fr_tin_x4.png",
+    "sharpness": 733.8,
+    "ssim_vs_source": 0.95
+   },
+   {
+    "item": "Maggi seasoning bottle (authentic)",
+    "source": "maggi_bottle_x4.png",
+    "sharpness": 1237.2,
+    "ssim_vs_source": 0.975
+   }
+  ]
+ },
+ "C2_maggi_bottle-hero": {
+  "direction": "Bottle hero, Maggi red-to-gold light, ingredients around the base",
+  "test": "C",
+  "products": [
+   {
+    "item": "Maggi France tin (bg, authentic)",
+    "source": "maggi_fr_tin_x4.png",
+    "sharpness": 3.1,
+    "ssim_vs_source": null
+   },
+   {
+    "item": "Maggi seasoning bottle — hero (authentic)",
+    "source": "maggi_bottle_x4.png",
+    "sharpness": 1091.3,
+    "ssim_vs_source": 0.979
+   }
+  ]
+ }
+}
