@@ -96,7 +96,7 @@
    - Gold Blend and home machines in Japan;
    - Maggi in Japanese hotel kitchens since 1927 (from Nestlé Japan's 2025 press release).
 6. **Performance:** backdrop blur and large images are GPU work. On an older laptop, rehearse once in the actual room's browser; if a transition stutters, turn on **Reduce motion**.
-7. **The six analytical slides** are not created (by design). See `docs/ADDING_SLIDES.md`.
+7. **The six analytical slides** were added later. See section 7, which also lists what still needs checking by hand.
 
 ## 6. Asset upgrade: approved test-batch candidates A2, B1 and C2
 
@@ -133,3 +133,75 @@
 **Still open:**
 - In the Maggi showcase, the orbiting onion passes in front of the tin's "Bouillon gras" label for about a second. This existed before the swap and was left alone because the animation was frozen for this phase. Shifting the onion's orbit would fix it.
 - The 2008 KitKat wrapper photo is the remaining quality ceiling. A sharp, evenly lit packshot of a current pack would lift slides 2 and 6 the most.
+
+## 7. The 13-slide deck: analytical slides and the two advertising videos
+
+**Numbering.** Sections 1–6 use the original six-slide numbers. In the 13-slide order, old slides 3, 4, 5 and 6 are now 4, 5, 6 and 13.
+
+### What was added
+- **Six analytical slides (3, 7–10, 12).** They use the deck's tokens, type, glass and dark palette, on editorial layouts:
+  - lanes on slide 3;
+  - panels with a standardise/localise core on slide 7;
+  - a four-step hairline on slide 8;
+  - a channel matrix on slide 9;
+  - brand columns with a rules band on slide 10;
+  - numbered pillars on slide 12.
+- **Tags on every claim:** green for observed, amber for interpretation, pink for recommendation. Each slide has a source note.
+- **Nothing invented:**
+  - no prices (slide 8 shows the method only);
+  - no channel shares;
+  - no campaign histories beyond what was sourced.
+- **One video slide (11)** with two official KitKat ads, one from France and one from Japan, as click-to-play YouTube players. Details are in `docs/VIDEOS.md`.
+  It comes right after slide 10, so the principle comes first and the evidence follows. This makes 13 slides instead of 12.
+- **Eight new transitions**, 0.95–1.53 s each, plus `advertising>ads` and `ads>findings` for the video slide. They share one motif, a fine hairline:
+  - `portfolio>context`: the hairline splits the frame;
+  - `context>kitkat`: a red iris opens from the KitKat lane;
+  - `maggi>packaging`: the brand scene recedes;
+  - `packaging>pricing`: the panels fold into the pricing line;
+  - a page turn for `pricing>distribution`, `distribution>advertising` and `advertising>ads`;
+  - `ads>findings`: the two ads close in;
+  - `findings>finale`: the page settles into charcoal.
+- **The original six slides are unchanged.**
+  - Their `<section>` markup is byte-identical to the previous commit.
+  - `git diff` shows no change to `slides/slide-0*.js`, `split-kit.js`, `slides.css`, `scenes.css`, `glass.css`, `global.css` or any image.
+  - Their transitions (`opening>portfolio`, `kitkat>nescafe`, `nescafe>maggi`) are untouched.
+- **Japanese fonts.** The Noto Serif JP subsets now cover every Japanese character in the deck: 53 characters in 16 shards (`tools/subset_jp_fonts.py`).
+
+### Verification (Playwright, headless Chromium)
+- **All 13 slides captured settled at 1920×1080** (`docs/screenshots/`):
+  - no text clipped and no block overlapping a source note;
+  - no horizontal overflow;
+  - no console errors and no failed requests.
+  - Two earlier overlaps (the insight boxes on slides 3 and 7) and the pack callouts on slide 7 were fixed.
+- **New transitions seeked at 0.1–1.2 s.** After each one, exactly one slide is visible, the FX layer is cleared and navigation is free again.
+- **Navigation:**
+  - 13 progress dots;
+  - Home goes to 1/13 and End to 13/13;
+  - back navigation uses the glass sheet;
+  - a double press moves one slide.
+- **Video slide:**
+  - no player before a click;
+  - a click loads the `youtube-nocookie.com` player in place, which reported “PUB KITKAT® BETTER BREAKS · KITKAT France · 0:20”;
+  - only one player at a time;
+  - after clicking inside the player, focus returns to the page and → moves to slide 12;
+  - leaving, replaying (R) and returning all unload the player;
+  - Enter on a focused poster plays it.
+- **file:// and claude.ai builds:**
+  - from file://, YouTube answers “Error 153”, so link mode switches on automatically;
+  - the claude.ai copy is built in link mode, and its posters open YouTube in a new tab.
+  - The build sandbox blocks YouTube's video stream servers, so frames were not played back here.
+- **Static PowerPoint:** 13 slides; it renders in LibreOffice (13 pages). On slide 11, the two posters are YouTube links.
+- **Walkthrough:** `docs/walkthrough.mp4`, 79 s, 1280×720, H.264, 1,977 frames decoded without errors.
+
+### Still to verify by hand
+1. **Play each ad once on the presentation laptop, with sound** (internet required). If the room blocks YouTube, use the fallback links on another device, or the Canva embed.
+2. **Channel ownership.** Neither channel shows YouTube's verified badge.
+   - Ownership rests on the channel names (“KITKAT France”, “ネスレ日本公式チャンネル”), on paid view counts (5.3 M; Nestlé Japan's other ads reach tens of millions) and on the French legal mentions.
+   - The French ad's exact date is not shown to this environment (“about a year ago”).
+3. **French Consumer Code R412-7** (French-language labelling) comes from a secondary source: confirm it on Légifrance.
+   - The Loi Toubon reading of “\*break = pause” and the health-banner law (9 August 2004; decree of 27 February 2007) also come from secondary legal summaries.
+4. **Nestlé Japan figures:** KitKat regional and seasonal flavours “since 2000”, and the Nescafé Ambassador programme launched in 2012.
+5. **Treated as established, without a new source:** Nescafé soluble and Dolce Gusto in France.
+6. **Distribution matrix (slide 9).** It is a qualitative reading of this deck's evidence. Check the Japan cells (Nescafé vending, KitKat regional and travel retail) and the France online-grocery cells against your course material.
+7. **“Sakura saku” as the exam-pass telegram** rests on Japanese press columns (Akita Sakigake and others). It is common knowledge in Japan, but cite it as cultural context.
+8. **Still open from earlier:** the Maggi onion-occlusion note on slide 6, and the manual-review points in section 5.

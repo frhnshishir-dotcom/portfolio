@@ -1,9 +1,30 @@
-# Adding the six analytical slides
+# Adding slides
 
-The engine is id-based. Slide order lives in a single list, so the analytical slides can be interleaved anywhere without changing the existing six.
+The engine is id-based. Slide order lives in a single list, so slides can be interleaved anywhere without changing the others.
 
-The planned sections are market context, packaging, pricing, distribution, advertising and communication, and key findings.
-Their content has not been written; this guide only explains how to plug them in.
+**Status.** The deck now has 13 slides.
+- The six analytical slides (`context`, `packaging`, `pricing`, `distribution`, `advertising`, `findings`) and the video slide (`ads`) are in place, all using `slides/analysis-kit.js`.
+- The general steps below still apply to any new slide.
+
+## The quick way: an analytical page
+
+Give a section the classes `slide an` and a `data-slide-id`. Mark each element with its entrance type and start time. `slides/analysis-kit.js` registers the module by itself, so you need no JS:
+
+```html
+<section class="slide an" data-slide-id="sources" data-title="Sources">
+  <header class="an-head">
+    <p class="an-label" data-a="label" data-t="0.1">Appendix</p>
+    <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Sources.</span></h2>
+  </header>
+  <div class="an-body" style="top: 300px" data-a="rise" data-t="0.8">…</div>
+  <p class="an-source" data-a="fade" data-t="1.6">…</p>
+</section>
+```
+
+- **Types:** `label`, `title`, `rise`, `pop`, `glass` (with optional `data-from="right"`), `line`, `fade`, and `stagger` (with `data-sel`, the children that pop in).
+- **Video:** a `.vd` card with `data-yt="<YouTube id>"` becomes a click-to-play player. See `docs/VIDEOS.md` and the `ads` slide.
+- **Order:** add the id to `scripts/deck.config.js`.
+- **Transitions:** pairs without a dedicated transition use the glass sheet.
 
 ## 1. Add the section to `index.html`
 

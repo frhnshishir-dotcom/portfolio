@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="styles/glass.css">
   <link rel="stylesheet" href="styles/slides.css">
   <link rel="stylesheet" href="styles/scenes.css">
+  <link rel="stylesheet" href="styles/analysis.css">
   <link rel="stylesheet" href="styles/animations.css">
 </head>
 <body>
@@ -279,13 +280,308 @@
         <img class="s6-logo" src="assets/logos/logo_nestle_white.svg" alt="Nestlé">
       </section>
 
-      <!-- Analytical slides will be inserted here later (see docs/ADDING_SLIDES.md). -->
+      <!-- Analytical slides (order is set in scripts/deck.config.js) -->
+      <!-- ============ Analysis · Market context ============ -->
+      <section class="slide an an-context" data-slide-id="context" data-title="Market context, France vs Japan">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Market context · France vs Japan</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Two markets.</span> <span class="line">Different routes to relevance.</span></h2>
+        </header>
+
+        <div class="an-body cx-grid">
+          <div class="cx-colhead" data-a="rise" data-t="0.75"><span class="mk"><i class="chip__flag flag-fr"></i>France</span><span class="tag tag--fact">Observed</span></div>
+          <div class="cx-colhead cx-colhead--mid" data-a="rise" data-t="1.05"><span class="tag tag--int">Interpretation</span><small>Where adaptation happens</small></div>
+          <div class="cx-colhead" data-a="rise" data-t="0.85"><span class="mk"><i class="chip__flag flag-jp"></i>Japan <span class="jp">日本</span></span><span class="tag tag--fact">Observed</span></div>
+
+          <div class="cx-cell cx-cell--fr" data-a="rise" data-t="0.95"><p class="an-p">Nestlé is established in France across chocolate, coffee and culinary. KitKat centres on the classic four-finger bar.</p></div>
+          <div class="cx-cell" data-a="pop" data-t="1.25"><div class="cx-cat" data-brand="kitkat"><i class="dot dot--kitkat"></i><div><b>KitKat</b><span>Local flavours, provenance and gifting</span></div></div></div>
+          <div class="cx-cell cx-cell--jp" data-a="rise" data-t="1.05"><p class="an-p">Regional and seasonal flavours since 2000, many inspired by local ingredients. Exam-season gifting, tied to “kitto katsu”.</p></div>
+
+          <div class="cx-cell cx-cell--fr" data-a="rise" data-t="1.1"><p class="an-p">Nescafé sells soluble coffee and Dolce Gusto capsule formats.</p></div>
+          <div class="cx-cell" data-a="pop" data-t="1.4"><div class="cx-cat" data-brand="nescafe"><i class="dot dot--nescafe"></i><div><b>Nescafé</b><span>Routines, formats and services</span></div></div></div>
+          <div class="cx-cell cx-cell--jp" data-a="rise" data-t="1.2"><p class="an-p">Workplace coffee through the Nescafé Ambassador programme (since 2012), with Barista and Dolce Gusto machines.</p></div>
+
+          <div class="cx-cell cx-cell--fr" data-a="rise" data-t="1.25"><p class="an-p">Maggi’s French range includes KUB stock cubes and Arôme Maggi liquid seasoning.</p></div>
+          <div class="cx-cell" data-a="pop" data-t="1.55"><div class="cx-cat" data-brand="maggi"><i class="dot dot--maggi"></i><div><b>Maggi</b><span>Familiar culinary uses and local recipes</span></div></div></div>
+          <div class="cx-cell cx-cell--jp" data-a="rise" data-t="1.35"><p class="an-p">Maggi Bouillon, a Western-style stock, used for home dishes such as potofu.</p></div>
+        </div>
+
+        <p class="glass glass--deep an-quote cx-quote" data-a="glass" data-t="1.95">The right adaptation depends on the category and consumption occasion, not on national stereotypes.</p>
+        <p class="an-source" data-a="fade" data-t="2.2"><b>Sources:</b> Nestlé Japan (KitKat regional range since 2000; exam-season packs); Nestlé Japan, Nescafé Ambassador (launched 2012); Nestlé Japan press releases on Maggi (2019, 2025); French retail listings for Maggi KUB and Arôme Maggi. <b>Interpretation:</b> team analysis.</p>
+      </section>
+
+      <!-- ============ Analysis · Packaging ============ -->
+      <section class="slide an an-packaging" data-slide-id="packaging" data-title="Packaging, global identity and local relevance">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Packaging · Global identity, local relevance</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">One brand identity.</span> <span class="line">Locally relevant packaging.</span></h2>
+        </header>
+
+        <div class="an-body pk-wrap">
+          <article class="pk-panel" data-a="rise" data-t="0.8">
+            <div class="ad-top"><span class="mk"><i class="chip__flag flag-fr"></i>France</span><span class="tag tag--fact">Observed</span></div>
+            <div class="pk-visual">
+              <div class="pk-schema" aria-label="Label anatomy schematic"><i class="brand">Brand logo</i><i>Product name and function, in French</i><i>Preparation · mandatory information</i></div>
+            </div>
+            <h3 class="an-h3">Clear, familiar, in French</h3>
+            <ul class="an-list">
+              <li>French-language product information is required.</li>
+              <li>Clear product function and preparation instructions.</li>
+              <li>Familiar brand codes and recognisable packs.</li>
+            </ul>
+          </article>
+
+          <div class="glass in-flow pk-mid" data-a="glass" data-t="1.25">
+            <h4>Standardise <span class="tag tag--rec">Recommendation</span></h4>
+            <div class="pk-pills pk-pills--std"><span>Brand logo</span><span>Core colours</span><span>Brand recognition</span><span>Quality cues</span></div>
+            <h4>Localise</h4>
+            <div class="pk-pills pk-pills--loc"><span>Language</span><span>Product information</span><span>Pack format</span><span>Flavour communication</span><span>Occasion and presentation</span></div>
+          </div>
+
+          <article class="pk-panel" data-a="rise" data-t="0.95">
+            <div class="ad-top"><span class="mk"><i class="chip__flag flag-jp"></i>Japan <span class="jp">日本</span></span><span class="tag tag--fact">Observed</span></div>
+            <div class="pk-visual">
+              <img src="assets/images/cut/kkjp_ujimatcha_box.webp" alt="KitKat Uji Matcha box, photographed in Japan">
+              <div class="pk-callouts">
+                <span class="pk-callout"><span class="jp">宇治抹茶</span> Uji matcha</span>
+                <span class="pk-callout"><span class="jp">日本土産</span> “Japan souvenir”</span>
+                <span class="pk-callout"><span class="jp">3枚入</span> 3 pieces</span>
+              </div>
+            </div>
+            <h3 class="an-h3">Local language, place and occasion</h3>
+            <ul class="an-list">
+              <li>Japanese-language information and usage are required.</li>
+              <li>Local ingredients and regional storytelling.</li>
+              <li>Gift-oriented packs where the occasion calls for it.</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="glass glass--deep an-quote pk-example" data-a="glass" data-t="1.85">KitKat is the clearest case: one brand code, many regional and gift-ready packs.</p>
+        <p class="an-source" data-a="fade" data-t="2.1"><b>Sources:</b> Regulation (EU) No 1169/2011, art. 15; French Consumer Code, art. R412-7; Japan Food Labeling Act (Act No. 70 of 2013) and Food Labeling Standards (2015). Pack: KitKat Uji Matcha box, photographed in Japan (Wikimedia Commons). <b>Recommendation:</b> team analysis.</p>
+      </section>
+
+      <!-- ============ Analysis · Pricing ============ -->
+      <section class="slide an an-pricing" data-slide-id="pricing" data-title="Pricing, comparing value across markets">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Pricing · Comparing value across markets</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Pricing: comparing value,</span> <span class="line">not just shelf price.</span></h2>
+        </header>
+        <p class="glass glass--deep pr-note" data-a="glass" data-t="0.7" data-from="right">No prices are shown: equivalent, dated shelf prices for both markets have not been collected yet. This is the method for collecting them.</p>
+
+        <div class="an-body pr-steps">
+          <i class="pr-line" data-a="line" data-t="0.3"></i>
+          <div class="pr-step" data-a="rise" data-t="0.9"><span class="pr-node">01</span><h3 class="an-h3">Match the SKU</h3><p class="an-p">Same product variant, format and pack size in both markets.</p></div>
+          <div class="pr-step" data-a="rise" data-t="1.05"><span class="pr-node">02</span><h3 class="an-h3">Normalise the price</h3><p class="an-p">Price per 100 g, 100 ml or serving. Convert currencies at the same collection date.</p></div>
+          <div class="pr-step" data-a="rise" data-t="1.2"><span class="pr-node">03</span><h3 class="an-h3">Map the price ladder</h3><p class="an-p">Entry, core and premium. Keep limited editions and gift formats apart from everyday products.</p></div>
+          <div class="pr-step" data-a="rise" data-t="1.35"><span class="pr-node">04</span><h3 class="an-h3">Read the context</h3><p class="an-p">Promotions, retailer type, taxes, production costs and machine-system costs where relevant.</p></div>
+        </div>
+
+        <div class="pr-cats-head" data-a="fade" data-t="1.6"><span class="tag tag--rec">Recommendation</span>What to compare, by category</div>
+        <div class="an-body pr-cats">
+          <div class="pr-cat pr-cat--kitkat" data-a="rise" data-t="1.7"><h3 class="an-h3"><i class="dot dot--kitkat"></i>KitKat</h3><p class="an-p">Compare everyday bars with everyday bars. Regional and gift editions are a separate tier.</p></div>
+          <div class="pr-cat pr-cat--nescafe" data-a="rise" data-t="1.82"><h3 class="an-h3"><i class="dot dot--nescafe"></i>Nescafé</h3><p class="an-p">For machine formats, compare the cost per cup, including the machine and its capsules or refills.</p></div>
+          <div class="pr-cat pr-cat--maggi" data-a="rise" data-t="1.94"><h3 class="an-h3"><i class="dot dot--maggi"></i>Maggi</h3><p class="an-p">Compare pack size and cost per preparation, not price per pack.</p></div>
+        </div>
+        <p class="an-source" data-a="fade" data-t="2.15"><b>Method:</b> team recommendation. No prices, margins or market shares are shown because no comparable, dated data has been collected for both markets.</p>
+      </section>
+
+      <!-- ============ Analysis · Distribution ============ -->
+      <section class="slide an an-distribution" data-slide-id="distribution" data-title="Distribution, reaching consumers in the right place">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Distribution · Channels by category</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Reaching consumers</span> <span class="line">in the right place.</span></h2>
+        </header>
+
+        <div class="an-body ds-matrix" data-a="stagger" data-t="1.05" data-sel=".ds-pill, .ds-none">
+          <div class="ds-h" style="border-bottom-color: transparent;"></div>
+          <div class="ds-h" data-a="rise" data-t="0.7">Supermarkets &amp; hypermarkets</div>
+          <div class="ds-h" data-a="rise" data-t="0.75">Convenience &amp; vending</div>
+          <div class="ds-h" data-a="rise" data-t="0.8">Online grocery</div>
+          <div class="ds-h" data-a="rise" data-t="0.85">Regional &amp; travel retail</div>
+          <div class="ds-h" data-a="rise" data-t="0.9">Workplace &amp; machine services</div>
+          <div class="ds-h" data-a="rise" data-t="0.95">Recipe &amp; cooking content</div>
+
+          <div class="ds-row" data-a="rise" data-t="0.85"><b><i class="dot dot--kitkat"></i>KitKat</b><span>Impulse · gifting</span></div>
+          <div class="ds-c"><span class="ds-pill">FR JP</span></div>
+          <div class="ds-c"><span class="ds-pill">FR JP</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-pill ds-pill--jp">JP</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+
+          <div class="ds-row" data-a="rise" data-t="0.95"><b><i class="dot dot--nescafe"></i>Nescafé</b><span>Home · work · on the go</span></div>
+          <div class="ds-c"><span class="ds-pill">FR JP</span></div>
+          <div class="ds-c"><span class="ds-pill ds-pill--jp">JP</span></div>
+          <div class="ds-c"><span class="ds-pill">FR</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-pill">FR JP</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+
+          <div class="ds-row" data-a="rise" data-t="1.05"><b><i class="dot dot--maggi"></i>Maggi</b><span>Everyday cooking</span></div>
+          <div class="ds-c"><span class="ds-pill">FR JP</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-pill">FR</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-none">—</span></div>
+          <div class="ds-c"><span class="ds-pill ds-pill--rec">Rec.</span></div>
+        </div>
+
+        <div class="ds-legend" data-a="fade" data-t="1.8">
+          <span><span class="ds-pill">FR JP</span>&nbsp; channel used for the category in that market</span>
+          <span><span class="ds-pill ds-pill--jp">JP</span>&nbsp; Japan-specific</span>
+          <span><span class="ds-pill ds-pill--rec">Rec.</span>&nbsp; recommended role, not an observed channel</span>
+          <span>— no claim made</span>
+        </div>
+        <p class="glass glass--deep an-quote ds-quote" data-a="glass" data-t="2.0">Distribution should follow the consumption occasion.</p>
+        <p class="an-source" data-a="fade" data-t="2.2"><b>Basis:</b> qualitative mapping from this deck’s evidence (Nestlé Japan: Nescafé Ambassador, regional KitKat; Nescafé vending in Japan; French retail listings). No channel shares or dominance are implied.</p>
+      </section>
+
+      <!-- ============ Analysis · Advertising and communication ============ -->
+      <section class="slide an an-advertising" data-slide-id="advertising" data-title="Advertising and communication">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Advertising &amp; communication · Local meaning, global brand</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Translate the meaning,</span> <span class="line">not just the slogan.</span></h2>
+        </header>
+
+        <div class="an-body ad-cols">
+          <article class="ad-col ad-col--kitkat" data-a="rise" data-t="0.8">
+            <div class="ad-top"><img src="assets/logos/logo_kitkat.svg" alt="KitKat"><span class="mk"><i class="chip__flag flag-jp"></i>Japan</span></div>
+            <ul class="an-list">
+              <li>Exam-season encouragement on packs.</li>
+              <li>The “kitto katsu” sound-alike: “you will surely win”.</li>
+              <li>Regional souvenir storytelling.</li>
+            </ul>
+            <p class="an-p" style="margin-top: 14px;"><span class="tag tag--fact">Observed</span></p>
+          </article>
+          <article class="ad-col ad-col--nescafe" data-a="rise" data-t="0.95">
+            <div class="ad-top"><img src="assets/logos/logo_nescafe_white.svg" alt="Nescafé"><span class="mk"><i class="chip__flag flag-jp"></i>Japan</span></div>
+            <ul class="an-list">
+              <li>The coffee experience, at home and at work.</li>
+              <li>Workplace coffee culture.</li>
+              <li>The Nescafé Ambassador programme (since 2012).</li>
+            </ul>
+            <p class="an-p" style="margin-top: 14px;"><span class="tag tag--fact">Observed</span></p>
+          </article>
+          <article class="ad-col ad-col--maggi" data-a="rise" data-t="1.1">
+            <div class="ad-top"><img class="ad-logo--mg" src="assets/logos/logo_maggi.png" alt="Maggi"><span class="mk"><i class="chip__flag flag-fr"></i>France</span></div>
+            <ul class="an-list">
+              <li>Culinary familiarity.</li>
+              <li>Everyday cooking.</li>
+              <li>Products such as KUB and Arôme Maggi.</li>
+            </ul>
+            <p class="an-p" style="margin-top: 14px;"><span class="tag tag--fact">Observed</span></p>
+          </article>
+        </div>
+
+        <div class="glass an-body ad-rules" data-a="glass" data-t="1.45">
+          <div class="ad-rules-title">Creative rules<br><span class="tag tag--rec">Recommendation</span></div>
+          <div><h4><i class="chip__flag flag-fr"></i>France</h4><ul class="an-list"><li>Product use and taste.</li><li>Convenience.</li><li>Everyday relevance.</li></ul></div>
+          <div><h4><i class="chip__flag flag-jp"></i>Japan</h4><ul class="an-list"><li>Context-rich storytelling.</li><li>Local provenance.</li><li>Occasion-based relevance, where evidence supports it.</li></ul></div>
+          <div><h4>Both markets</h4><ul class="an-list"><li>Test creative with local consumers.</li><li>Avoid stereotypes.</li><li>Preserve the brand’s core promise.</li></ul></div>
+        </div>
+        <p class="an-source" data-a="fade" data-t="2.0"><b>Sources:</b> Nestlé Japan (exam-season KitKat packs; Nescafé Ambassador, launched 2012); French retail listings for Maggi KUB and Arôme Maggi. <b>Creative rules</b> are recommendations, not past campaigns.</p>
+      </section>
+
+      <!-- ============ Analysis · Two official ads (video) ============
+           Click-to-play YouTube embeds (privacy-enhanced domain). Nothing
+           loads or plays until the presenter clicks; leaving the slide
+           unloads the player. See slides/analysis-kit.js (NFJ.video). -->
+      <section class="slide an an-ads" data-slide-id="ads" data-title="Two official KitKat ads, France and Japan">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Advertising in practice · Two official KitKat ads</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Same brand. Two cultural codes.</span></h2>
+        </header>
+
+        <div class="an-body ads-grid">
+          <article class="ads-col ads-col--fr" data-a="rise" data-t="0.7">
+            <div class="ads-head">
+              <span class="mk"><i class="chip__flag flag-fr"></i>France</span>
+              <span class="ads-camp">“Better Breaks” <em>KitKat · 0:21</em></span>
+            </div>
+            <div class="vd" data-yt="HCBP72vABBk" data-name="KITKAT France, “Better Breaks”">
+              <a class="vd-poster" href="https://www.youtube.com/watch?v=HCBP72vABBk" target="_blank" rel="noopener" aria-label="Play the KITKAT France ad “Better Breaks” (21 seconds, YouTube)">
+                <img src="assets/video/kitkat-fr_better-breaks_poster.jpg" alt="">
+                <span class="vd-play" aria-hidden="true"></span>
+                <span class="vd-cue"><b>Play</b> <span class="vd-mode">· sound on</span></span>
+              </a>
+            </div>
+            <p class="vd-link">Fallback: <a href="https://www.youtube.com/watch?v=HCBP72vABBk" target="_blank" rel="noopener">youtube.com/watch?v=HCBP72vABBk</a> · official KITKAT France channel</p>
+            <dl class="ads-points">
+              <div class="obs"><dt>Target market</dt><dd>French adults: the everyday break at work or study.</dd></div>
+              <div class="obs"><dt>Behaviour &amp; context</dt><dd>The work break amid information overload. On screen: “*break = pause” and the mandatory health banner.</dd></div>
+              <div class="int"><dt>Versus Japan</dt><dd>Humour and individual relief; the product and the “break” idea stay centre stage.</dd></div>
+              <div class="int"><dt>What it shows</dt><dd>The global “Have a break” platform travels; language and legal mentions are localised.</dd></div>
+            </dl>
+          </article>
+
+          <article class="ads-col ads-col--jp" data-a="rise" data-t="0.85">
+            <div class="ads-head">
+              <span class="mk"><i class="chip__flag flag-jp"></i>Japan</span>
+              <span class="ads-camp"><span class="jp">キット、サクラサクよ</span> <em>“Surely, the blossoms will bloom” · 0:30</em></span>
+            </div>
+            <div class="vd" data-yt="hvyWq_mOpIo" data-name="Nestlé Japan, KitKat “Kitto, sakura saku yo”">
+              <a class="vd-poster" href="https://www.youtube.com/watch?v=hvyWq_mOpIo" target="_blank" rel="noopener" aria-label="Play the Nestlé Japan KitKat ad “Kitto, sakura saku yo” (30 seconds, YouTube)">
+                <img src="assets/video/kitkat-jp_sakura-saku_poster.jpg" alt="">
+                <span class="vd-play" aria-hidden="true"></span>
+                <span class="vd-cue"><b>Play</b> <span class="vd-mode">· sound on</span></span>
+              </a>
+            </div>
+            <p class="vd-link">Fallback: <a href="https://www.youtube.com/watch?v=hvyWq_mOpIo" target="_blank" rel="noopener">youtube.com/watch?v=hvyWq_mOpIo</a> · KitKat, Nestlé Japan official channel</p>
+            <dl class="ads-points">
+              <div class="obs"><dt>Target market</dt><dd>Students facing university entrance exams, and the people who support them.</dd></div>
+              <div class="obs"><dt>Behaviour &amp; context</dt><dd>Exam-season support shown as cherry blossoms; “sakura saku” was the old telegram for “passed”.</dd></div>
+              <div class="int"><dt>Versus France</dt><dd>Emotional and collective: the brand carries other people’s encouragement.</dd></div>
+              <div class="int"><dt>What it shows</dt><dd>Nestlé localises the meaning: name, season and ritual make KitKat a good-luck gift.</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <p class="an-source" data-a="fade" data-t="1.6"><b>Videos:</b> KITKAT France, “PUB KITKAT® BETTER BREAKS” (YouTube); Nestlé Japan official channel, “<span class="jp">キット、サクラサクよ 受験生応援 メッセージ桜 30秒版</span>” (YouTube; message blossoms at Harajuku JING, Jan. 2024). <b>Rules:</b> French health banner (law of 9 Aug. 2004); Loi Toubon (1994). <span class="k-obs">Observed</span> · <span class="k-int">Interpretation</span></p>
+      </section>
+
+      <!-- ============ Analysis · Key findings ============ -->
+      <section class="slide an an-findings" data-slide-id="findings" data-title="Key findings, global platform and local execution">
+        <header class="an-head">
+          <p class="an-label" data-a="label" data-t="0.1">Key findings</p>
+          <h2 class="an-title" data-fit data-a="title" data-t="0.2"><span class="line">Global platform.</span> <span class="line">Local execution.</span></h2>
+        </header>
+
+        <div class="an-body kf-pillars">
+          <article class="glass in-flow kf-p" data-a="glass" data-t="0.8">
+            <span class="kf-n">01</span>
+            <h3 class="an-h3">Protect global brand codes</h3>
+            <p class="an-p">Keep what makes the brand recognisable identical in every market.</p>
+            <div class="pk-pills kf-pills"><span>Brand name</span><span>Logo</span><span>Core colours</span><span>Product promise</span><span>Quality cues</span></div>
+          </article>
+          <article class="glass in-flow kf-p" data-a="glass" data-t="1.0">
+            <span class="kf-n">02</span>
+            <h3 class="an-h3">Adapt the local value proposition</h3>
+            <div class="kf-brands">
+              <div><i class="dot dot--kitkat"></i><b>KitKat</b><span>Flavour, provenance, gifting</span></div>
+              <div><i class="dot dot--nescafe"></i><b>Nescafé</b><span>Routines, formats, services</span></div>
+              <div><i class="dot dot--maggi"></i><b>Maggi</b><span>Local recipes, culinary uses</span></div>
+            </div>
+          </article>
+          <article class="glass in-flow kf-p" data-a="glass" data-t="1.2">
+            <span class="kf-n">03</span>
+            <h3 class="an-h3">Validate before scaling</h3>
+            <p class="an-p">Test packaging comprehension, price acceptance, channel performance and campaign response with local consumers.</p>
+            <p class="an-p">Segment by age, lifestyle, region and occasion, not nationality alone.</p>
+          </article>
+        </div>
+
+        <p class="glass glass--deep an-quote kf-close" data-a="glass" data-t="1.75">Standardise what creates <span class="em">recognition</span>. Localise what creates <span class="em">relevance</span>. Measure what creates <span class="em">growth</span>.</p>
+        <p class="an-source" data-a="fade" data-t="2.1"><b>Basis:</b> synthesis of slides 3 to 11. Conclusions and recommendations by the team.</p>
+      </section>
+
 
       <!-- Shared transition layer -->
       <div class="fx" id="fx" aria-hidden="true">
         <div class="fx-veil"></div>
         <div class="fx-sheet"></div>
         <div class="fx-band"></div>
+        <div class="fx-line"></div>
       </div>
       <div class="grain" aria-hidden="true"></div>
     </div>
@@ -303,13 +599,13 @@
     <span class="chrome__sep" data-hide-small></span>
     <button class="chrome__btn" id="replay" aria-label="Replay this slide (R)" title="Replay this slide (R)" data-hide-small><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg></button>
     <button class="chrome__btn" id="motion" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion" data-hide-small><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></button>
-    <button class="chrome__btn" id="credits-btn" aria-expanded="false" aria-controls="credits" aria-label="Image credits" title="Image credits" data-hide-small><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg></button>
+    <button class="chrome__btn" id="credits-btn" aria-expanded="false" aria-controls="credits" aria-label="Image and video credits" title="Image and video credits" data-hide-small><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg></button>
     <button class="chrome__btn" id="fs" aria-label="Toggle full screen (F)" title="Full screen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </nav>
 
-  <aside class="glass glass--deep credits" id="credits" aria-label="Image credits">
-    <h2>Image credits</h2>
-    <p>Photographs from Wikimedia Commons, used under the licences listed. Cut-outs, crops and the coffee-pour composite are adaptations; CC BY-SA adaptations are shared under the same licence. Logos are trademarks of Société des Produits Nestlé S.A., shown for academic analysis.</p>
+  <aside class="glass glass--deep credits" id="credits" aria-label="Image and video credits">
+    <h2>Image and video credits</h2>
+    <p>Photographs from Wikimedia Commons, used under the licences listed. Cut-outs, crops and the coffee-pour composite are adaptations; CC BY-SA adaptations are shared under the same licence. Logos are trademarks of Société des Produits Nestlé S.A., shown for academic analysis. The two advertisements on slide 11 are official Nestlé uploads, played with YouTube’s own player; they are not downloaded or copied.</p>
     <ol id="credits-list"></ol>
   </aside>
 
@@ -324,6 +620,7 @@
   <script src="slides/slide-04.js"></script>
   <script src="slides/slide-05.js"></script>
   <script src="slides/slide-06.js"></script>
+  <script src="slides/analysis-kit.js"></script>
   <script src="scripts/transitions.js"></script>
   <script src="scripts/navigation.js"></script>
   <script src="scripts/interactions.js"></script>

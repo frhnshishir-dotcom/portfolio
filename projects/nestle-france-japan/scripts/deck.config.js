@@ -16,5 +16,6 @@
 window.NFJ = window.NFJ || {};
 window.NFJ.deckConfig = {
   title: "Nestlé: France × Japan",
-  sequence: ["opening", "portfolio", "kitkat", "nescafe", "maggi", "finale"]
+  sequence: ["opening", "portfolio", "context", "kitkat", "nescafe", "maggi",
+             "packaging", "pricing", "distribution", "advertising", "ads", "findings", "finale"]
 };

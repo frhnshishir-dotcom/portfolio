@@ -15,41 +15,43 @@ reg = json.load(open(os.path.join(HERE, "commons_register.json"), encoding="utf-
 NOTES = {
  "paris_bluehour": ("1", "France", "Verified location: Pont des Invalides, Paris.", "images/paris_bluehour.webp"),
  "tokyo_bluehour": ("1", "Japan", "Verified location: Minato City, Tokyo (Tokyo Tower).", "images/tokyo_bluehour.webp"),
- "kk_red_wrapper": ("2, 6", "Global (UK pack)", "Genuine KitKat four-finger bar in the red wrapper, photographed in the UK (2008 'only 107 calories' pack). It is used only as a global brand icon on slides 2 and 6 and is never labelled as French.", "images/hd/kk_red_wrapper_hd.webp (cut-out, Real-ESRGAN 4× upscale; foil-mask holes filled with the photo's own pixels)"),
- "kk_split": ("3", "France (product form)", "Genuine classic four-finger KitKat, unwrapped and photographed in the US. The classic bar is the core of the French range. French packaging is not pictured.", "images/hd/kk_split_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
- "kk_opened": ("3", "France (product form)", "Genuine KitKat wafer cross-section, photographed in the US. Used as a chocolate close-up.", "images/cut/kk_opened.webp (cut-out)"),
- "kkjp_ujimatcha_box": ("3", "Japan", "Genuine Japanese pack: KitKat Uji Matcha box (日本土産 = 'Japan souvenir').", "images/cut/kkjp_ujimatcha_box.webp (cut-out)"),
- "kkjp_matcha_wrap": ("3", "Japan", "Genuine Japanese matcha KitKat (Otona no Amasa line) with wrapper.", "images/cut/kkjp_matcha_wrap.webp (cut-out)"),
- "kkjp_sakura_split": ("3", "Japan", "Genuine KitKat Sakura Matcha, a Japanese seasonal flavour.", "images/cut/kkjp_sakura_split.webp (cut-out)"),
- "kkjp_chocolatory": ("3", "Japan", "Verified location: KitKat Chocolatory boutique, Shibuya, Tokyo.", "images/kkjp_chocolatory.webp"),
- "fr_cafe_tournesol": ("3", "France", "Verified location: Café Le Tournesol, rue de la Gaîté, Paris.", "images/fr_cafe_tournesol.webp"),
- "fr_cafe_standre": ("4", "France", "Verified location: place Saint-André-des-Arts, Paris.", "images/fr_cafe_standre.webp"),
- "nes_red_mug": ("2, 4, 6", "Global", "Genuine Nescafé red mug: the logo is printed on the cup, so it has the cup's real curvature and light. On slide 4 it is the hero cup the coffee is poured into.", "images/hd/nes_red_mug_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
- "pour_moka": ("4", "Brand-neutral", "Real photograph of coffee poured from a moka pot. Split into pot and stream layers and composited so the stream falls into the Nescafé mug. The pot is unbranded.", "images/cut/pour_pot.webp + images/cut/pour_stream.webp (cut-outs, composite)"),
- "nes_cafe_au_lait": ("4", "France (habit)", "Genuine Nescafé-branded cup with café au lait. The country where it was taken is not stated, so it illustrates the habit only.", "images/nes_cafe_au_lait.webp"),
- "nes_dg_capsules": ("4", "France (product)", "Genuine Nescafé Dolce Gusto capsules, photographed in Spain. Dolce Gusto is sold in France.", "images/cut/nes_dg_capsules.webp (cut-out)"),
- "nesjp_genio_home": ("4", "Japan", "Genuine Nescafé Dolce Gusto Genio, photographed in a home in Japan (Japanese uploader and caption).", "images/nesjp_genio_home.webp"),
- "nesjp_vending": ("4", "Japan", "Genuine Nescafé vending machine in Japan (Commons category 'Nescafé vending machines in Japan'). Only the 330 px preview could be downloaded, so it is shown small.", "images/nesjp_vending_330.webp"),
- "jp_shinjuku": ("4", "Japan", "Verified location: Shinjuku Station South, Tokyo.", "images/jp_shinjuku.webp"),
- "maggi_fr_tin": ("5", "France", "Genuine Maggi France 'Bouillon gras' tin (historic). It is the hero product of slide 5.", "images/hd/maggi_fr_tin_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
- "maggi_fr_kub": ("5", "France", "Genuine historic Bouillon Kub tin, made by SISA, the Maggi company's French successor.", "images/cut/maggi_fr_kub.webp (cut-out)"),
- "maggi_bottle": ("2, 6", "Global", "Genuine Maggi seasoning bottle (German 'Würze' label, 2023). Used as a global brand icon only, with no market claim.", "images/hd/maggi_bottle_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
- "food_fr_potaufeu_ingr": ("5", "France (dish)", "Pot-au-feu ingredients. Brand-neutral food context.", "images/food_fr_potaufeu_ingr.webp"),
- "food_jp_potofu": ("5", "Japan", "Japanese home-style potofu (Japanese uploader: 'ソーセージ入りポトフ'). Brand-neutral food context.", "images/food_jp_potofu.webp"),
- "food_jp_consomme": ("5", "Japan", "Pot-au-feu made with consommé (Japanese uploader). Brand-neutral food context.", "images/food_jp_consomme.webp"),
- "ing_carrot": ("5", "Ingredient", "Real photograph of carrots (Evan-Amos), cropped and cut out.", "images/cut/ing_carrot.webp"),
- "ing_onion": ("5", "Ingredient", "Real photograph of an onion.", "images/cut/ing_onion.webp"),
- "ing_bay": ("5", "Ingredient", "Real photograph of bay leaves; one leaf cropped.", "images/cut/ing_bay.webp"),
- "ing_bouquet": ("5", "Ingredient", "Real photograph of a bouquet garni, the classic pot-au-feu herb bundle.", "images/cut/ing_bouquet.webp"),
- "ing_leek_real": ("5", "Ingredient", "Real photograph of a leek; the stalk and lower leaves are cropped. It replaced an AI-generated leek that was caught in review.", "images/cut/ing_leek.webp"),
- "ing_garlic": ("5", "Ingredient", "Real photograph of a garlic bulb and clove.", "images/cut/ing_garlic.webp"),
- "prop_beans": ("4", "Brand-neutral", "Real photograph of roasted coffee beans. Graded amber and lit as the stage plate behind the coffee pour (approved candidate B1).", "images/hd/stage_nescafe_B1.webp (graded, relit stage plate)"),
+ "kk_red_wrapper": ("2, 13", "Global (UK pack)", "Genuine KitKat four-finger bar in the red wrapper, photographed in the UK (2008 'only 107 calories' pack). It is used only as a global brand icon on slides 2 and 13 and is never labelled as French.", "images/hd/kk_red_wrapper_hd.webp (cut-out, Real-ESRGAN 4× upscale; foil-mask holes filled with the photo's own pixels)"),
+ "kk_split": ("4", "France (product form)", "Genuine classic four-finger KitKat, unwrapped and photographed in the US. The classic bar is the core of the French range. French packaging is not pictured.", "images/hd/kk_split_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
+ "kk_opened": ("4", "France (product form)", "Genuine KitKat wafer cross-section, photographed in the US. Used as a chocolate close-up.", "images/cut/kk_opened.webp (cut-out)"),
+ "kkjp_ujimatcha_box": ("4, 7", "Japan", "Genuine Japanese pack: KitKat Uji Matcha box (日本土産 = 'Japan souvenir'). Also the packaging example on slide 7.", "images/cut/kkjp_ujimatcha_box.webp (cut-out)"),
+ "kkjp_matcha_wrap": ("4", "Japan", "Genuine Japanese matcha KitKat (Otona no Amasa line) with wrapper.", "images/cut/kkjp_matcha_wrap.webp (cut-out)"),
+ "kkjp_sakura_split": ("4", "Japan", "Genuine KitKat Sakura Matcha, a Japanese seasonal flavour.", "images/cut/kkjp_sakura_split.webp (cut-out)"),
+ "kkjp_chocolatory": ("4", "Japan", "Verified location: KitKat Chocolatory boutique, Shibuya, Tokyo.", "images/kkjp_chocolatory.webp"),
+ "fr_cafe_tournesol": ("4", "France", "Verified location: Café Le Tournesol, rue de la Gaîté, Paris.", "images/fr_cafe_tournesol.webp"),
+ "fr_cafe_standre": ("5", "France", "Verified location: place Saint-André-des-Arts, Paris.", "images/fr_cafe_standre.webp"),
+ "nes_red_mug": ("2, 5, 13", "Global", "Genuine Nescafé red mug: the logo is printed on the cup, so it has the cup's real curvature and light. On slide 5 it is the hero cup the coffee is poured into.", "images/hd/nes_red_mug_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
+ "pour_moka": ("5", "Brand-neutral", "Real photograph of coffee poured from a moka pot. Split into pot and stream layers and composited so the stream falls into the Nescafé mug. The pot is unbranded.", "images/cut/pour_pot.webp + images/cut/pour_stream.webp (cut-outs, composite)"),
+ "nes_cafe_au_lait": ("5", "France (habit)", "Genuine Nescafé-branded cup with café au lait. The country where it was taken is not stated, so it illustrates the habit only.", "images/nes_cafe_au_lait.webp"),
+ "nes_dg_capsules": ("5", "France (product)", "Genuine Nescafé Dolce Gusto capsules, photographed in Spain. Dolce Gusto is sold in France.", "images/cut/nes_dg_capsules.webp (cut-out)"),
+ "nesjp_genio_home": ("5", "Japan", "Genuine Nescafé Dolce Gusto Genio, photographed in a home in Japan (Japanese uploader and caption).", "images/nesjp_genio_home.webp"),
+ "nesjp_vending": ("5", "Japan", "Genuine Nescafé vending machine in Japan (Commons category 'Nescafé vending machines in Japan'). Only the 330 px preview could be downloaded, so it is shown small.", "images/nesjp_vending_330.webp"),
+ "jp_shinjuku": ("5", "Japan", "Verified location: Shinjuku Station South, Tokyo.", "images/jp_shinjuku.webp"),
+ "maggi_fr_tin": ("6", "France", "Genuine Maggi France 'Bouillon gras' tin (historic). It is the hero product of slide 6.", "images/hd/maggi_fr_tin_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
+ "maggi_fr_kub": ("6", "France", "Genuine historic Bouillon Kub tin, made by SISA, the Maggi company's French successor.", "images/cut/maggi_fr_kub.webp (cut-out)"),
+ "maggi_bottle": ("2, 13", "Global", "Genuine Maggi seasoning bottle (German 'Würze' label, 2023). Used as a global brand icon only, with no market claim.", "images/hd/maggi_bottle_hd.webp (cut-out, Real-ESRGAN 4× upscale)"),
+ "food_fr_potaufeu_ingr": ("6", "France (dish)", "Pot-au-feu ingredients. Brand-neutral food context.", "images/food_fr_potaufeu_ingr.webp"),
+ "food_jp_potofu": ("6", "Japan", "Japanese home-style potofu (Japanese uploader: 'ソーセージ入りポトフ'). Brand-neutral food context.", "images/food_jp_potofu.webp"),
+ "food_jp_consomme": ("6", "Japan", "Pot-au-feu made with consommé (Japanese uploader). Brand-neutral food context.", "images/food_jp_consomme.webp"),
+ "ing_carrot": ("6", "Ingredient", "Real photograph of carrots (Evan-Amos), cropped and cut out.", "images/cut/ing_carrot.webp"),
+ "ing_onion": ("6", "Ingredient", "Real photograph of an onion.", "images/cut/ing_onion.webp"),
+ "ing_bay": ("6", "Ingredient", "Real photograph of bay leaves; one leaf cropped.", "images/cut/ing_bay.webp"),
+ "ing_bouquet": ("6", "Ingredient", "Real photograph of a bouquet garni, the classic pot-au-feu herb bundle.", "images/cut/ing_bouquet.webp"),
+ "ing_leek_real": ("6", "Ingredient", "Real photograph of a leek; the stalk and lower leaves are cropped. It replaced an AI-generated leek that was caught in review.", "images/cut/ing_leek.webp"),
+ "ing_garlic": ("6", "Ingredient", "Real photograph of a garlic bulb and clove.", "images/cut/ing_garlic.webp"),
+ "prop_beans": ("5", "Brand-neutral", "Real photograph of roasted coffee beans. Graded amber and lit as the stage plate behind the coffee pour (approved candidate B1).", "images/hd/stage_nescafe_B1.webp (graded, relit stage plate)"),
  "prop_choc": ("—", "Brand-neutral", "Chocolate chunks, used only in asset-lab test candidates.", "asset-lab only"),
  "prop_choc_raw": ("—", "Brand-neutral", "Dark chocolate squares, used only in asset-lab test candidates.", "asset-lab only"),
- "logo_nestle": ("1, 6", "Global", "Nestlé wordmark (public-domain text logo), recoloured to soft white.", "logos/logo_nestle_white.svg"),
- "logo_kitkat": ("2", "Global", "KitKat logo.", "logos/logo_kitkat.svg"),
- "logo_nescafe": ("2", "Global", "Nescafé logo (2014), recoloured to soft white.", "logos/logo_nescafe_white.svg"),
- "logo_maggi": ("2", "Global", "Maggi logo.", "logos/logo_maggi.png"),
+ "logo_nestle": ("1, 13", "Global", "Nestlé wordmark (public-domain text logo), recoloured to soft white.", "logos/logo_nestle_white.svg"),
+ "logo_kitkat": ("2, 10", "Global", "KitKat logo.", "logos/logo_kitkat.svg"),
+ "logo_nescafe": ("2, 10", "Global", "Nescafé logo (2014), recoloured to soft white.", "logos/logo_nescafe_white.svg"),
+ "logo_maggi": ("2, 10", "Global", "Maggi logo.", "logos/logo_maggi.png"),
+ "video_kitkat_fr": ("11", "France", "Official ad from the KITKAT France YouTube channel (checked through YouTube oEmbed: public, embeddable, owner 'KITKAT France'). Played with the YouTube player after a click; the video file is not downloaded or redistributed. The poster is the video's own YouTube thumbnail.", "video/kitkat-fr_better-breaks_poster.jpg + YouTube embed HCBP72vABBk"),
+ "video_kitkat_jp": ("11", "Japan", "Official ad from Nestlé Japan's YouTube channel (ネスレ日本公式チャンネル; oEmbed: public, embeddable). Message blossoms shown at Harajuku JING, January 2024. Played with the YouTube player after a click; not downloaded. The poster is the video's own YouTube thumbnail.", "video/kitkat-jp_sakura-saku_poster.jpg + YouTube embed hvyWq_mOpIo"),
 }
 
 # logos fetched directly (not in the downloader's register)
@@ -57,6 +59,8 @@ EXTRA = {
  "logo_nestle": {"title": "File:Nestlé textlogo.svg", "license": "Public domain", "author": "Nestlé (trademark)", "page": "https://commons.wikimedia.org/wiki/File:Nestl%C3%A9_textlogo.svg"},
  "logo_kitkat": {"title": "File:Logo of the KitKat.svg", "license": "Public domain", "author": "Nestlé (trademark)", "page": "https://commons.wikimedia.org/wiki/File:Logo_of_the_KitKat.svg"},
  "logo_nescafe": {"title": "File:Nescafé logo 2014.svg", "license": "Public domain", "author": "Nestlé (trademark)", "page": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_logo_2014.svg"},
+ "video_kitkat_fr": {"title": "File:PUB KITKAT® BETTER BREAKS (YouTube)", "license": "© Nestlé; embedded via YouTube", "author": "KITKAT France (Nestlé)", "page": "https://www.youtube.com/watch?v=HCBP72vABBk"},
+ "video_kitkat_jp": {"title": "File:キットカット キット、サクラサクよ 受験生応援 メッセージ桜 30秒版 (YouTube)", "license": "© Nestlé; embedded via YouTube", "author": "Nestlé Japan (ネスレ日本公式チャンネル)", "page": "https://www.youtube.com/watch?v=hvyWq_mOpIo"},
  "nesjp_vending": {"title": "File:NESCAFE (96552190).jpg", "license": "CC BY 2.0", "author": "Bit Boy", "page": "https://commons.wikimedia.org/wiki/File:NESCAFE_(96552190).jpg"},
 }
 for k, v in EXTRA.items():
@@ -69,16 +73,16 @@ for k, (slides, market, note, path) in NOTES.items():
                      author=(r.get("author") or "").strip().replace("\n", " ")[:80], license=r.get("license", ""), page=r.get("page", "")))
 
 md = ["# Asset register", "",
-      "Every photograph comes from Wikimedia Commons, under the licence shown. None of the original deck's AI-generated images was kept, and every author line was screened for AI-generation markers (see the quality report).",
+      "Every photograph comes from Wikimedia Commons, under the licence shown. The two advertising videos on slide 11 are official Nestlé uploads on YouTube, played with YouTube's own player after a click; they are linked and embedded, never downloaded (see docs/VIDEOS.md). None of the original deck's AI-generated images was kept, and every author line was screened for AI-generation markers (see the quality report).",
       "Official Nestlé, KitKat, Nescafé and Maggi websites could not be reached from the build environment, so no packshots were taken from them.",
-      "", "Cut-outs were made with rembg (isnet-general-use). Hero packshots in images/hd/ are 4× upscales (Real-ESRGAN x4plus); the fidelity check vs source scored SSIM 0.90–0.98. Stage plates in images/hd/ are studio sets built in code (gradients, bokeh) plus, for B1, a real coffee-bean photo. The slide-4 pour is a composite of two real photographs. No generative AI was used. CC BY-SA adaptations are shared under the same licence.", "",
+      "", "Cut-outs were made with rembg (isnet-general-use). Hero packshots in images/hd/ are 4× upscales (Real-ESRGAN x4plus); the fidelity check vs source scored SSIM 0.90–0.98. Stage plates in images/hd/ are studio sets built in code (gradients, bokeh) plus, for B1, a real coffee-bean photo. The slide-5 pour is a composite of two real photographs. No generative AI was used. CC BY-SA adaptations are shared under the same licence.", "",
       "| Asset | Slides | Market | Verification / note | Licence | Author | Source |", "|---|---|---|---|---|---|---|"]
 for r in rows:
     md.append(f"| `{r['path']}` | {r['slides']} | {r['market']} | {r['note']} | {r['license']} | {r['author']} | [{r['title']}]({r['page']}) |")
 open(os.path.join(ROOT, "docs", "ASSET_REGISTER.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
 
 used = [r for r in rows if r["slides"] != "—"]
-js = "/* Generated by tools/build_register.py — image credits shown in the deck. */\n(function () {\n  const credits = " + json.dumps(
+js = "/* Generated by tools/build_register.py — image and video credits shown in the deck. */\n(function () {\n  const credits = " + json.dumps(
     [dict(t=r["title"], a=r["author"], l=r["license"], u=r["page"], s=r["slides"]) for r in used], ensure_ascii=False, indent=1) + """;
   document.addEventListener("DOMContentLoaded", function () {
     const ol = document.getElementById("credits-list");
