@@ -100,11 +100,33 @@
     }
   }, { passive: true });
 
-  /* ---------- The control bar wakes on pointer movement ---------- */
+  /* ---------- The control bar wakes on pointer movement or any touch ---------- */
   let wakeTimer = null;
-  document.addEventListener("pointermove", () => {
+  function wake(ms) {
     document.body.classList.add("chrome-awake");
     clearTimeout(wakeTimer);
-    wakeTimer = setTimeout(() => document.body.classList.remove("chrome-awake"), 2200);
+    wakeTimer = setTimeout(() => document.body.classList.remove("chrome-awake"), ms);
+  }
+  document.addEventListener("pointermove", (e) => { if (e.pointerType === "mouse") wake(2200); });
+  document.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") wake(4000); });
+
+  /* ---------- Tablets: tap to advance (Keynote-style) ----------
+     A quick tap on an empty part of the slide moves on; a tap on the left
+     fifth goes back. Taps on buttons (brand tabs, products, controls) keep
+     their own meaning, and swipes are handled above. */
+  let tap = null;
+  vp.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse") return;
+    tap = { x: e.clientX, y: e.clientY, t: Date.now() };
+  });
+  vp.addEventListener("pointerup", (e) => {
+    if (!tap || e.pointerType === "mouse") return;
+    const moved = Math.hypot(e.clientX - tap.x, e.clientY - tap.y);
+    const quick = Date.now() - tap.t < 350;
+    tap = null;
+    if (!quick || moved > 12) return;
+    if (e.target.closest("button, a, [role='tab'], #credits")) return;
+    if (e.clientX < window.innerWidth * 0.2) NFJ.nav.prev();
+    else NFJ.nav.next();
   });
 })();

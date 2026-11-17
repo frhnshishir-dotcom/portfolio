@@ -13,6 +13,11 @@ Everything is local: images, fonts and GSAP. No internet is needed in the classr
 - **Windows:** double-click **`Start Presentation.bat`**, or open `index.html` in Chrome or Edge.
 - **macOS / Linux:** run `./start-presentation.sh`. It serves the folder on `http://localhost:8000` and opens it.
 - **Any OS:** opening `index.html` directly also works.
+- **iPad:** iPadOS cannot run a local `index.html` from the Files app, so open the deck from a web link (a hosted copy) in Safari.
+  For true full screen, choose Share → **Add to Home Screen**, then launch it from the home-screen icon. On touch screens:
+  - tap anywhere to advance, and tap the left edge to go back (swipes work too);
+  - products and tabs keep their own tap behaviour;
+  - the control bar stays faintly visible.
 
 Press **F** for full screen. The deck is authored on a 1920×1080 canvas and scales to any 16:9 screen; other shapes are letterboxed, never clipped.
 For the smoothest motion, use Chrome or Edge with hardware acceleration on.
