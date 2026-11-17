@@ -212,6 +212,13 @@
   "s": "5"
  },
  {
+  "t": "Roasted coffee beans on the surface. 01.jpg",
+  "a": "A S M Jobaer",
+  "l": "CC BY-SA 4.0",
+  "u": "https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._01.jpg",
+  "s": "4"
+ },
+ {
   "t": "Nestlé textlogo.svg",
   "a": "Société des Produits Nestlé S.A.",
   "l": "Public domain",

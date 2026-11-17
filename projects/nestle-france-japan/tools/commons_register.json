@@ -430,5 +430,32 @@
   "author": "Amada44",
   "description": "Leek on white background",
   "orig_size": "2361x3464"
+ },
+ "prop_beans": {
+  "file": "prop_beans.jpg",
+  "title": "File:Roasted coffee beans on the surface. 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Roasted_coffee_beans_on_the_surface._01.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "A S M Jobaer",
+  "description": "This is the photo of roasted coffee beans. These coffee beans are roasted in a factory in Bangladesh.",
+  "orig_size": "4898x3265"
+ },
+ "prop_choc": {
+  "file": "prop_choc.jpg",
+  "title": "File:Compound chocolate.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Compound_chocolate.jpg",
+  "license": "CC BY-SA 3.0",
+  "author": "SKopp",
+  "description": "Some pieces of dark compound chocolate to be used for coating cakes. It was made by the German manufacturer Pickerd. According to the label the ingredients are vegetable fat (palm oil), sugar, low-fat",
+  "orig_size": "3648x2432"
+ },
+ "prop_choc_raw": {
+  "file": "prop_choc_raw.jpg",
+  "title": "File:Righteously Raw chocolate.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Righteously_Raw_chocolate.jpg",
+  "license": "CC0",
+  "author": "Mx. Granger",
+  "description": "Two pieces of raw dark chocolate (83% pure dark cacao) made by Righteously Raw.",
+  "orig_size": "4072x2848"
  }
 }

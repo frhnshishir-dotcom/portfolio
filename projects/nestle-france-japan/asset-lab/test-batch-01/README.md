@@ -1,7 +1,7 @@
 # Asset test batch 01: KitKat, Nescafé, Maggi
 
-These are review candidates only. **Nothing in the presentation uses them yet**: `index.html`, `assets/` and the animation system are unchanged.
-They will replace existing assets only after you approve them.
+**Status:** **A2, B1 and C2 are approved and swapped into the deck**, as `assets/images/hd/` packshots and stage plates (see `docs/QUALITY_REPORT.md`, section 6).
+A1, B2 and C1 stay here for reference only.
 
 ![Contact sheet](test-batch-01_contact-sheet.jpg)
 

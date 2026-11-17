@@ -3,6 +3,9 @@
    All coordinates on the 1920×1080 canvas.
    ========================================================================= */
 
+/* Approved asset batch 01 — full-bleed stage plates inside the opening stage layers */
+.stage-plate { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+
 /* =========================================================================
    Opening — darkness, haze, motes, a lit seam, a foreground title plate
    ========================================================================= */
@@ -187,7 +190,7 @@
    KitKat — dark stage, rim lights, two product groups
    ========================================================================= */
 
-.s3-dark { background: radial-gradient(55% 55% at 50% 66%, #1a1c21 0%, #0a0b0e 55%, #030406 100%); pointer-events: none; }
+.s3-dark { background: #030406; pointer-events: none; }  /* stage plate: approved candidate A2 */
 .s3-rim { position: absolute; top: 0; bottom: 0; width: 60%; pointer-events: none; mix-blend-mode: screen; opacity: 0; }
 .s3-rim--fr { left: 0; background: radial-gradient(45% 45% at 30% 72%, rgba(230, 40, 50, 0.38), rgba(230, 40, 50, 0) 70%), radial-gradient(30% 30% at 35% 70%, rgba(255, 170, 110, 0.25), rgba(255, 170, 110, 0) 70%); }
 .s3-rim--jp { right: 0; background: radial-gradient(45% 45% at 70% 70%, rgba(155, 190, 80, 0.32), rgba(155, 190, 80, 0) 70%), radial-gradient(30% 30% at 65% 70%, rgba(216, 21, 47, 0.2), rgba(216, 21, 47, 0) 70%); }
@@ -205,12 +208,16 @@
 .s4-frame-genio { left: 1160px; top: 520px; width: 320px; height: 410px; }
 .s4-frame-vending { left: 1520px; top: 545px; width: 240px; height: 362px; }
 
-.s4-warm {
+.s4-warm {  /* stage plate: approved candidate B1 (roasted beans, amber key) */
   z-index: 6;
   pointer-events: none;
-  background:
-    radial-gradient(30% 36% at 46% 52%, rgba(214, 140, 60, 0.28), rgba(214, 140, 60, 0) 70%),
-    radial-gradient(60% 60% at 50% 50%, #1a0f08 0%, #0b0604 70%, #050302 100%);
+  background: #0b0604;
+}
+.s4-warm::after {  /* keep the warm glow where the mug is first lit */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(30% 36% at 46% 52%, rgba(214, 140, 60, 0.18), rgba(214, 140, 60, 0) 70%);
 }
 .s4-cam { position: absolute; inset: 0; z-index: 7; pointer-events: none; transform-origin: 50% 50%; }
 .s4-pot {
@@ -234,7 +241,7 @@
    Maggi — hero tin, orbiting ingredients, warm gold light
    ========================================================================= */
 
-.s5-dark { background: #050302; pointer-events: none; }
+.s5-dark { background: #050302; pointer-events: none; }  /* stage plate: approved candidate C2 */
 .s5-tin { z-index: 4; }
 .s5-kub { z-index: 3; }
 .s5-shadow-tin { z-index: 2; }

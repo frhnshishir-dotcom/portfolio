@@ -97,3 +97,39 @@
    - Maggi in Japanese hotel kitchens since 1927 (from Nestlé Japan's 2025 press release).
 6. **Performance:** backdrop blur and large images are GPU work. On an older laptop, rehearse once in the actual room's browser; if a transition stutters, turn on **Reduce motion**.
 7. **The six analytical slides** are not created (by design). See `docs/ADDING_SLIDES.md`.
+
+## 6. Asset upgrade: approved test-batch candidates A2, B1 and C2
+
+**What changed.** Only image sources were changed. The animation system, timing and layouts are untouched (no JS change).
+
+- **Hero packshots** now load 4× Real-ESRGAN upscales from `assets/images/hd/`. Each keeps its original aspect ratio within 0.15%, so every layout and animation coordinate is unchanged.
+
+  | Product | Used on slides |
+  |---|---|
+  | KitKat red wrapper | 2, 6 |
+  | KitKat classic bar | 3 |
+  | Nescafé mug | 2, 4, 6 |
+  | Maggi bottle | 2, 6 |
+  | Maggi France tin | 5 |
+
+- **Opening stage layers** now hold the approved studio sets as full-bleed plates:
+
+  | Layer | Slide | Plate |
+  |---|---|---|
+  | `.s3-dark` | KitKat face-off | A2 chocolate set with red bokeh |
+  | `.s4-warm` | coffee pour | B1 roasted beans in amber light |
+  | `.s5-dark` | Maggi showcase | C2 red-to-gold set with bokeh |
+
+  The plates are inline `<img>` elements, so the existing preloader decodes them before any transition.
+
+**Packaging fidelity.** As placed, the packshots match their sources at SSIM 0.90–0.98. Nothing on the packaging was generated.
+
+**Checks after the swap:**
+- settled screenshots of all six slides: no clipped text;
+- the three openings at exact times;
+- no console errors;
+- a before/after crop at 2× pixel density showing cleaner edges and labels.
+
+**Still open:**
+- In the Maggi showcase, the orbiting onion passes in front of the tin's "Bouillon gras" label for about a second. This existed before the swap and was left alone because the animation was frozen for this phase. Shifting the onion's orbit would fix it.
+- The 2008 KitKat wrapper photo is the remaining quality ceiling. A sharp, evenly lit packshot of a current pack would lift slides 2 and 6 the most.
