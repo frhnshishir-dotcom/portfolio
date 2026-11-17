@@ -1,0 +1,46 @@
+/* =========================================================================
+   CSS-only ambient motion. Everything choreographed lives in GSAP; these
+   loops only run on the active slide (paused elsewhere).
+   ========================================================================= */
+
+.steam {
+  position: absolute;
+  left: 34%;
+  top: 6%;
+  width: 34%;
+  height: 46%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(9px);
+}
+.steam i {
+  position: absolute;
+  bottom: 0;
+  width: 32%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0));
+  opacity: 0;
+  animation: steam 5.6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.steam i:nth-child(1) { left: 6%; animation-delay: 0s; }
+.steam i:nth-child(2) { left: 36%; animation-delay: 1.8s; }
+.steam i:nth-child(3) { left: 64%; animation-delay: 3.6s; }
+
+@keyframes steam {
+  0%   { transform: translate3d(0, 30%, 0) scale(0.6, 0.5); opacity: 0; }
+  25%  { opacity: 0.85; }
+  60%  { transform: translate3d(8%, -20%, 0) scale(1, 1.1) skewX(6deg); opacity: 0.45; }
+  100% { transform: translate3d(-6%, -60%, 0) scale(1.3, 1.4) skewX(-8deg); opacity: 0; }
+}
+
+.slide.is-active .steam i { animation-play-state: running; }
+
+/* Reduced motion: honour the OS setting and the in-deck toggle */
+@media (prefers-reduced-motion: reduce) {
+  .steam i { animation: none; opacity: 0.25; }
+}
+body.reduce-motion .steam i { animation: none; opacity: 0.25; }
+body.reduce-motion .chrome,
+body.reduce-motion .credits { transition-duration: 0.01s; }

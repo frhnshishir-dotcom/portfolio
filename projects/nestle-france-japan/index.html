@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nestlé: France × Japan</title>
+  <meta name="description" content="An interactive presentation comparing how Nestlé adapts KitKat, Nescafé and Maggi to France and Japan.">
+  <meta name="theme-color" content="#071321">
+  <link rel="preload" href="assets/fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/glass.css">
+  <link rel="stylesheet" href="styles/slides.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true"><div class="loader__bar"><i></i></div></div>
+
+  <main class="viewport" id="viewport">
+    <div class="stage" id="stage" aria-live="polite">
+
+      <!-- ============ 1 · Opening ============ -->
+      <section class="slide s1" data-slide="1" aria-label="Slide 1 of 6: Nestlé, France × Japan">
+        <div class="s1-city s1-paris layer">
+          <img class="s1-img" src="assets/images/paris_bluehour.webp" alt="Paris at blue hour: the Eiffel Tower above the Seine and Haussmann façades">
+        </div>
+        <div class="s1-city s1-tokyo layer">
+          <img class="s1-img" src="assets/images/tokyo_bluehour.webp" alt="Tokyo at blue hour: Tokyo Tower among the towers of Minato">
+        </div>
+        <div class="s1-shade layer"></div>
+        <div class="glass glass-divider s1-seam"></div>
+        <div class="s1-glow layer"></div>
+
+        <div class="glass chip s1-tag s1-tag--paris"><i class="chip__flag flag-fr"></i>Paris</div>
+        <div class="glass chip s1-tag s1-tag--tokyo"><i class="chip__flag flag-jp"></i>Tokyo <span class="jp">東京</span></div>
+
+        <div class="glass glass--deep s1-plate">
+          <img class="s1-logo" src="assets/logos/logo_nestle_white.svg" alt="Nestlé">
+          <h1 class="s1-title" data-fit><span class="visually-hidden">Nestlé: </span><span class="line">France</span> <span class="line s1-x">×</span> <span class="line">Japan</span></h1>
+          <p class="s1-sub">Two Markets. One Global Group.</p>
+          <p class="s1-meta"><span>International Marketing Strategy</span><i></i><span>2026</span></p>
+        </div>
+      </section>
+
+      <!-- ============ 2 · Portfolio ============ -->
+      <section class="slide s2" data-slide="2" aria-label="Slide 2 of 6: Three brands, two markets">
+        <div class="s2-bg layer"></div>
+        <header class="s2-head">
+          <h2 class="s2-title headline" data-fit>Three brands. Two markets.</h2>
+          <p class="s2-sub">A closer look at how global brands connect with local consumers.</p>
+        </header>
+        <p class="s2-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-.5a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.9-2.6L4.6 15a1.5 1.5 0 0 1 2.4-1.8L9 15"/></svg>Select a brand to compare the two markets</p>
+
+        <div class="s2-cards" role="list">
+          <article class="s2-card" data-brand="kitkat" role="listitem">
+            <button class="s2-hit" aria-expanded="false" aria-controls="s2-kk-detail"><span class="visually-hidden">KitKat: show France and Japan</span></button>
+            <div class="s2-media"><img class="s2-photo" src="assets/images/kk_wall.webp" alt=""></div>
+            <div class="s2-tint"></div>
+            <div class="product s2-product s2-product--kk"><img src="assets/images/cut/kk_split.webp" alt="A classic four-finger KitKat bar snapped in two"></div>
+            <img class="s2-logo s2-logo--kk" src="assets/logos/logo_kitkat.svg" alt="KitKat">
+            <div class="glass chip s2-label">KitKat<span class="s2-cat">Chocolate wafer</span></div>
+            <div class="glass glass--deep s2-detail" id="s2-kk-detail">
+              <p><span class="chip__flag flag-fr"></span><b>France</b> The classic four-finger bar sits at the heart of the range.</p>
+              <p><span class="chip__flag flag-jp"></span><b>Japan</b> Regional and seasonal flavours, and a good-luck gift: “Kitto Katsu”.</p>
+            </div>
+          </article>
+
+          <article class="s2-card" data-brand="nescafe" role="listitem">
+            <button class="s2-hit" aria-expanded="false" aria-controls="s2-nes-detail"><span class="visually-hidden">Nescafé: show France and Japan</span></button>
+            <div class="s2-media"><img class="s2-photo" src="assets/images/nes_gold_grains.webp" alt=""></div>
+            <div class="s2-tint"></div>
+            <div class="product s2-product s2-product--nes"><img src="assets/images/cut/nes_red_mug.webp" alt="A red Nescafé mug"></div>
+            <img class="s2-logo s2-logo--nes" src="assets/logos/logo_nescafe_white.svg" alt="Nescafé">
+            <div class="glass chip s2-label">Nescafé<span class="s2-cat">Coffee</span></div>
+            <div class="glass glass--deep s2-detail" id="s2-nes-detail">
+              <p><span class="chip__flag flag-fr"></span><b>France</b> Coffee with milk at breakfast, capsule machines at home.</p>
+              <p><span class="chip__flag flag-jp"></span><b>Japan</b> Gold Blend, home coffee machines and coffee on the go.</p>
+            </div>
+          </article>
+
+          <article class="s2-card" data-brand="maggi" role="listitem">
+            <button class="s2-hit" aria-expanded="false" aria-controls="s2-mg-detail"><span class="visually-hidden">Maggi: show France and Japan</span></button>
+            <div class="s2-media"><img class="s2-photo" src="assets/images/food_fr_potaufeu_ingr.webp" alt=""></div>
+            <div class="s2-tint"></div>
+            <div class="product s2-product s2-product--mg"><img src="assets/images/cut/maggi_bottle.webp" alt="A bottle of Maggi seasoning"></div>
+            <img class="s2-logo s2-logo--mg" src="assets/logos/logo_maggi.png" alt="Maggi">
+            <div class="glass chip s2-label">Maggi<span class="s2-cat">Stocks &amp; seasoning</span></div>
+            <div class="glass glass--deep s2-detail" id="s2-mg-detail">
+              <p><span class="chip__flag flag-fr"></span><b>France</b> Stock cubes for soups and slow-cooked classics.</p>
+              <p><span class="chip__flag flag-jp"></span><b>Japan</b> Maggi Bouillon, a Western-style stock for home cooking.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ 3 · KitKat ============ -->
+      <section class="slide s3 split" data-slide="3" aria-label="Slide 3 of 6: KitKat, beyond the classic break">
+        <div class="split__half split__fr">
+          <img class="split__bg s3-bg-fr" src="assets/images/fr_cafe_tournesol.webp" alt="A Paris café terrace with wicker chairs on a rainy morning">
+          <div class="split__grade s3-grade-fr"></div>
+        </div>
+        <div class="split__half split__jp">
+          <img class="split__bg s3-bg-jp" src="assets/images/kkjp_chocolatory.webp" alt="The KitKat Chocolatory boutique in Shibuya, Tokyo">
+          <div class="split__grade s3-grade-jp"></div>
+        </div>
+        <div class="s3-light layer"></div>
+        <div class="split__top layer"></div>
+        <div class="glass glass-divider split__divider"></div>
+
+        <h2 class="headline split__title" data-fit>KitKat: beyond the classic break.</h2>
+
+        <div class="glass chip split__chip split__chip--fr"><i class="chip__flag flag-fr"></i>France</div>
+        <div class="glass chip split__chip split__chip--jp"><i class="chip__flag flag-jp"></i>Japan <span class="jp">日本</span></div>
+
+        <!-- France products -->
+        <div class="contact-shadow s3-shadow-split"></div>
+        <div class="product s3-kk-split"><img src="assets/images/cut/kk_split.webp" alt="Classic four-finger KitKat, snapped"></div>
+        <div class="product s3-kk-opened"><img src="assets/images/cut/kk_opened.webp" alt="Close-up of the wafer layers inside a KitKat"></div>
+        <div class="glass caption s3-cap-fr">
+          <b>The classic break</b>
+          Four milk-chocolate wafer fingers: the bar at the heart of the French range.
+        </div>
+
+        <!-- Japan products -->
+        <div class="contact-shadow s3-shadow-box"></div>
+        <div class="product s3-kk-box"><img src="assets/images/cut/kkjp_ujimatcha_box.webp" alt="KitKat Uji Matcha gift box, made in Japan"></div>
+        <div class="product s3-kk-matcha"><img src="assets/images/cut/kkjp_matcha_wrap.webp" alt="Japanese matcha KitKat with its green wrapper"></div>
+        <div class="product s3-kk-sakura"><img src="assets/images/cut/kkjp_sakura_split.webp" alt="KitKat Sakura Matcha, snapped"></div>
+        <div class="glass caption s3-cap-jp">
+          <b>Flavours made to gift</b>
+          Uji Matcha, Sakura Matcha and regional editions. Students receive it for luck: “Kitto Katsu”, <em>you will surely win</em>.
+        </div>
+      </section>
+
+      <!-- ============ 4 · Nescafé ============ -->
+      <section class="slide s4 split" data-slide="4" aria-label="Slide 4 of 6: Nescafé, different habits, one coffee brand">
+        <div class="split__half split__fr">
+          <img class="split__bg s4-bg-fr" src="assets/images/fr_cafe_standre.webp" alt="Café terrace on place Saint-André-des-Arts, Paris">
+          <div class="split__grade s4-grade-fr"></div>
+        </div>
+        <div class="split__half split__jp">
+          <img class="split__bg s4-bg-jp" src="assets/images/jp_shinjuku.webp" alt="Shinjuku at night, Tokyo">
+          <div class="split__grade s4-grade-jp"></div>
+        </div>
+        <div class="s4-light layer"></div>
+        <div class="split__top layer"></div>
+        <div class="glass glass-divider split__divider"></div>
+
+        <h2 class="headline split__title s4-title" data-fit><span class="line">Nescafé: different habits.</span> <span class="line">One coffee brand.</span></h2>
+
+        <div class="glass chip split__chip split__chip--fr"><i class="chip__flag flag-fr"></i>France</div>
+        <div class="glass chip split__chip split__chip--jp"><i class="chip__flag flag-jp"></i>Japan <span class="jp">日本</span></div>
+
+        <!-- France -->
+        <figure class="frame s4-frame-cup">
+          <img src="assets/images/nes_cafe_au_lait.webp" alt="Café au lait in a Nescafé cup">
+          <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+        </figure>
+        <div class="product s4-capsules"><img src="assets/images/cut/nes_dg_capsules.webp" alt="Nescafé Dolce Gusto capsules in a bowl"></div>
+        <div class="glass caption s4-cap-fr">
+          <b>Breakfast, then the machine</b>
+          Coffee with milk to start the day, and Dolce Gusto capsules for the home.
+        </div>
+
+        <!-- Japan -->
+        <figure class="frame s4-frame-genio"><img src="assets/images/nesjp_genio_home.webp" alt="A Nescafé Dolce Gusto Genio machine in a Japanese home"></figure>
+        <figure class="frame s4-frame-vending"><img src="assets/images/nesjp_vending_330.webp" alt="A Nescafé vending machine in Japan"></figure>
+        <div class="glass caption s4-cap-jp">
+          <b>At home and on the go</b>
+          Gold Blend instant and home machines, plus ready-to-drink coffee from vending machines.
+        </div>
+      </section>
+
+      <!-- ============ 5 · Maggi ============ -->
+      <section class="slide s5 split" data-slide="5" aria-label="Slide 5 of 6: Maggi, local taste, global brand">
+        <div class="split__half split__fr">
+          <img class="split__bg s5-bg-fr" src="assets/images/food_fr_potaufeu_ingr.webp" alt="Pot-au-feu ingredients: beef shank, leeks, carrots, celery, turnips and potatoes">
+          <div class="split__grade s5-grade-fr"></div>
+        </div>
+        <div class="split__half split__jp">
+          <img class="split__bg s5-bg-jp" src="assets/images/food_jp_potofu.webp" alt="A Japanese home-style potofu with sausages and vegetables in clear broth">
+          <div class="split__grade s5-grade-jp"></div>
+        </div>
+        <div class="s5-light layer"></div>
+        <div class="split__top layer"></div>
+        <div class="glass glass-divider split__divider"></div>
+
+        <h2 class="headline split__title" data-fit>Maggi: local taste. Global brand.</h2>
+
+        <div class="glass chip split__chip split__chip--fr"><i class="chip__flag flag-fr"></i>France</div>
+        <div class="glass chip split__chip split__chip--jp"><i class="chip__flag flag-jp"></i>Japan <span class="jp">日本</span></div>
+
+        <!-- France -->
+        <div class="contact-shadow s5-shadow-tin"></div>
+        <div class="product s5-tin"><img src="assets/images/cut/maggi_fr_tin.webp" alt="Maggi France “Bouillon gras” tin"></div>
+        <div class="product s5-kub"><img src="assets/images/cut/maggi_fr_kub.webp" alt="Bouillon Kub tin"></div>
+        <div class="glass caption s5-cap-fr">
+          <b>Stock for slow classics</b>
+          Cubes such as Kub have flavoured French soups and pot-au-feu for generations.
+          <small>Pictured: historic Maggi France tins.</small>
+        </div>
+
+        <!-- Japan -->
+        <figure class="frame s5-frame-soup"><img src="assets/images/food_jp_consomme.webp" alt="Pot-au-feu made with consommé, served Japanese style"></figure>
+        <div class="glass chip s5-ident"><span class="jp">マギー ブイヨン</span><span class="s5-ident__en">Maggi Bouillon</span></div>
+        <div class="glass caption s5-cap-jp">
+          <b>A Western stock, a Japanese table</b>
+          Nestlé Japan sells Maggi Bouillon for dishes like potofu. Maggi reached Japanese hotel kitchens in 1927.
+          <small>No verified photo of the Japanese pack was available, so none is shown.</small>
+        </div>
+      </section>
+
+      <!-- ============ 6 · Closing ============ -->
+      <section class="slide s6" data-slide="6" aria-label="Slide 6 of 6: Think globally, adapt locally">
+        <div class="s6-world layer">
+          <div class="s6-sky layer">
+            <img class="s6-paris" src="assets/images/paris_night.webp" alt="">
+            <img class="s6-tokyo" src="assets/images/tokyo_dusk.webp" alt="">
+          </div>
+          <div class="s6-shade layer"></div>
+          <div class="s6-surface"></div>
+
+          <div class="contact-shadow s6-sh s6-sh-mug"></div>
+          <div class="contact-shadow s6-sh s6-sh-bottle"></div>
+          <div class="contact-shadow s6-sh s6-sh-kk"></div>
+          <div class="product s6-p s6-mug"><img src="assets/images/cut/nes_red_mug.webp" alt="Nescafé mug"></div>
+          <div class="product s6-p s6-bottle"><img src="assets/images/cut/maggi_bottle.webp" alt="Maggi seasoning bottle"></div>
+          <div class="product s6-p s6-matcha"><img src="assets/images/cut/kkjp_matcha_bar.webp" alt="Japanese matcha KitKat"></div>
+          <div class="product s6-p s6-kk"><img src="assets/images/cut/kk_split.webp" alt="Classic KitKat"></div>
+        </div>
+
+        <div class="glass s6-plate">
+          <h2 class="s6-title" data-fit><span class="line">Think globally.</span><span class="line">Adapt locally.</span></h2>
+          <p class="s6-sub">Global brand strength comes from understanding local consumers.</p>
+        </div>
+        <img class="s6-logo" src="assets/logos/logo_nestle_white.svg" alt="Nestlé">
+      </section>
+
+      <!-- Shared transition layer -->
+      <div class="fx" id="fx" aria-hidden="true">
+        <div class="fx-veil"></div>
+        <div class="fx-bars"><span></span><span></span><span></span></div>
+        <div class="fx-sheet"></div>
+        <div class="fx-band"></div>
+        <img class="fx-logo" src="assets/logos/logo_nestle_white.svg" alt="">
+      </div>
+      <div class="grain" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <p class="glass rotate-hint" role="note">Turn your phone sideways for the full presentation</p>
+
+  <!-- Presenter chrome -->
+  <nav class="glass chrome" id="chrome" aria-label="Presentation controls">
+    <div class="chrome__count" id="count" aria-live="polite">1 <span>/ 6</span></div>
+    <div class="chrome__progress" id="progress"></div>
+    <span class="chrome__sep"></span>
+    <button class="chrome__btn" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="chrome__btn" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <span class="chrome__sep" data-hide-small></span>
+    <button class="chrome__btn" id="motion" aria-pressed="false" aria-label="Reduce motion" title="Reduce motion" data-hide-small><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></button>
+    <button class="chrome__btn" id="credits-btn" aria-expanded="false" aria-controls="credits" aria-label="Image credits" title="Image credits" data-hide-small><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg></button>
+    <button class="chrome__btn" id="fs" aria-label="Toggle full screen (F)" title="Full screen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </nav>
+
+  <aside class="glass glass--deep credits" id="credits" aria-label="Image credits">
+    <h2>Image credits</h2>
+    <p>Photographs from Wikimedia Commons, used under the licences listed. Cut-outs and crops are adaptations; CC BY-SA adaptations are shared under the same licence. Logos are trademarks of Société des Produits Nestlé S.A., shown for academic analysis.</p>
+    <ol id="credits-list"></ol>
+  </aside>
+
+  <script src="scripts/vendor/gsap.min.js"></script>
+  <script src="scripts/credits.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="slides/slide-01.js"></script>
+  <script src="slides/slide-02.js"></script>
+  <script src="slides/split-kit.js"></script>
+  <script src="slides/slide-03.js"></script>
+  <script src="slides/slide-04.js"></script>
+  <script src="slides/slide-05.js"></script>
+  <script src="slides/slide-06.js"></script>
+  <script src="scripts/transitions.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/interactions.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

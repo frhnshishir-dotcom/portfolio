@@ -1,0 +1,143 @@
+/* =========================================================================
+   Glass system
+   Glass is reserved for the "functional" layer: labels, chips, captions,
+   the title plate and dividers. Photography and products stay the heroes.
+   Rules: never glass on glass; text on glass is always full-strength paper;
+   darker tint where text must be read, near-clear where glass only frames.
+   Custom properties are animated by GSAP:
+     --blur        backdrop blur radius (materialise: 0 → 18px)
+     --tint        alpha of the dark body (0.18 clear … 0.62 deep)
+     --edge-x      position of the light travelling along the border (%)
+     --sheen-x     position of the soft reflection across the surface (%)
+   ========================================================================= */
+
+.glass {
+  --blur: 18px;
+  --tint: 0.42;
+  --edge-x: -30%;
+  --sheen-x: -60%;
+  --radius: 22px;
+  position: absolute;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.025) 38%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.05) 100%),
+    rgba(7, 17, 30, var(--tint));
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(150%);
+  backdrop-filter: blur(var(--blur)) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 24px 60px -18px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+/* Fine border with a travelling light (masked gradient ring) */
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background:
+    radial-gradient(160px 60px at var(--edge-x) 0%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(160px 60px at calc(100% - var(--edge-x)) 100%, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(150deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.07) 40%, rgba(255, 255, 255, 0.05) 70%, rgba(255, 255, 255, 0.18));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* Soft reflection that drifts across the surface */
+.glass::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: var(--sheen-x);
+  width: 38%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.07) 45%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.07) 55%, rgba(255, 255, 255, 0) 100%);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+
+.glass > * { position: relative; z-index: 1; }
+
+/* Variants */
+.glass--deep { --tint: 0.6; }
+.glass--clear { --tint: 0.14; --blur: 10px; }
+.glass--warm {
+  background:
+    linear-gradient(160deg, rgba(255, 236, 214, 0.13) 0%, rgba(255, 255, 255, 0.02) 45%, rgba(255, 220, 180, 0.05) 100%),
+    rgba(28, 14, 8, var(--tint));
+}
+
+/* Pill chip — market labels and identifiers */
+.chip {
+  --radius: 999px;
+  --tint: 0.5;
+  --blur: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px 12px 16px;
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  white-space: nowrap;
+}
+.chip .jp { font-size: 20px; color: #e7e2da; font-weight: 500; }
+.chip__flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  flex: none;
+}
+.flag-fr { background: linear-gradient(90deg, #1f3c9a 0 33.3%, #f5f3ef 33.3% 66.6%, #d9282f 66.6%); }
+.flag-jp { background: radial-gradient(circle at 50% 50%, #c8102e 0 5.4px, #f5f3ef 5.8px); }
+
+/* Caption plate — short product captions */
+.caption {
+  --radius: 16px;
+  --tint: 0.55;
+  --blur: 16px;
+  padding: 16px 22px 18px;
+  max-width: 460px;
+  font-size: 19px;
+  line-height: 1.42;
+  color: var(--paper);
+}
+.caption b {
+  display: block;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  letter-spacing: 0.005em;
+}
+.caption small { display: block; margin-top: 8px; font-size: 14px; line-height: 1.4; color: #c9ced4; }
+
+/* Glass divider — a narrow sheet of architectural glass */
+.glass-divider {
+  --radius: 0;
+  --tint: 0.08;
+  --blur: 16px;
+  width: 46px;
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.35),
+    inset -1px 0 0 rgba(255, 255, 255, 0.12),
+    0 0 60px rgba(0, 0, 0, 0.35);
+}
+.glass-divider::before { width: 100%; left: 0; top: var(--sheen-y, -40%); bottom: auto; height: 34%; transform: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0)); }
+
+/* Reduced transparency preference: frost harder, keep contrast */
+@media (prefers-reduced-transparency: reduce) {
+  .glass { --tint: 0.78; }
+}

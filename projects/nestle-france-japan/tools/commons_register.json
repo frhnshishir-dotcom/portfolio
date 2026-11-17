@@ -1,0 +1,344 @@
+{
+ "paris_bluehour": {
+  "file": "paris_bluehour.jpg",
+  "title": "File:Pont des Invalides et Tour Eiffel - 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pont_des_Invalides_et_Tour_Eiffel_-_01.jpg",
+  "license": "CC BY-SA 3.0",
+  "author": "Carlos Delgado",
+  "description": "Night view of the Pont des Invalides and the Eiffel Tower, Paris, France.",
+  "orig_size": "3000x1500"
+ },
+ "tokyo_bluehour": {
+  "file": "tokyo_bluehour.jpg",
+  "title": "File:Tokyo Tower, Minato City.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg",
+  "license": "CC BY 4.0",
+  "author": "David Kernan",
+  "description": "A high-angle night photograph of Tokyo, Japan. The Tokyo Tower is prominently illuminated in its traditional orange \"Landmark Light.\" To the left, several modern skyscrapers are visible, including the",
+  "orig_size": "5991x3370"
+ },
+ "paris_night": {
+  "file": "paris_night.jpg",
+  "title": "File:1006 Eiffel tower night illumination by Pierre Bideau in Paris Photo by Giles Laurent.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:1006_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Photo: © Giles Laurent / Illumination: © Pierre Bideau, concepteur Lumière, pour l’éclairage de la tour Eiffel (Upload permission given by Société d'exploitation de la Tour Eiffel)",
+  "description": "Eiffel tower at night reflecting in the Seine in Paris, France",
+  "orig_size": "8366x5577"
+ },
+ "tokyo_dusk": {
+  "file": "tokyo_dusk.jpg",
+  "title": "File:Tokyo Tower Lit at Dusk with Surrounding Modern Skyscrapers - Ed Stuurman.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_Lit_at_Dusk_with_Surrounding_Modern_Skyscrapers_-_Ed_Stuurman.jpg",
+  "license": "CC BY 4.0",
+  "author": "Ed Stuurman",
+  "description": "Tokyo Tower in its usual orange and white lighting, surrounded by modern skyscrapers. At dusk the lit lattice stands out against the cool blue sky, still the most recognizable point on the skyline dec",
+  "orig_size": "1200x900"
+ },
+ "paris_rooftops": {
+  "file": "paris_rooftops.jpg",
+  "title": "File:La Tour Eiffel, de la terrasse panoramique du Printemps.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Tour_Eiffel,_de_la_terrasse_panoramique_du_Printemps.jpg",
+  "license": "CC BY 2.0",
+  "author": "OliBac",
+  "description": "La Tour Eiffel, prise de la terrasse panoramique du Printemps, Boulevard Haussmann.\n\nA gauche, surmontée du drapeau, la verrière du Grand Palais.",
+  "orig_size": "3127x4704"
+ },
+ "kk_wall": {
+  "file": "kk_wall.jpg",
+  "title": "File:Kit Kat.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kit_Kat.jpg",
+  "license": "CC0",
+  "author": "ArionStar",
+  "description": "Kit Kats at a supermarket in Colatina.",
+  "orig_size": "5942x3606"
+ },
+ "kk_split": {
+  "file": "kk_split.jpg",
+  "title": "File:Kit-Kat-Split.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kit-Kat-Split.jpg",
+  "license": "Public domain",
+  "author": "Evan-Amos",
+  "description": "A Kit-Kat that has been split in half.",
+  "orig_size": "3700x800"
+ },
+ "kk_opened": {
+  "file": "kk_opened.jpg",
+  "title": "File:KitKat opened.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:KitKat_opened.jpg",
+  "license": "Public domain",
+  "author": "Scott Ehardt",
+  "description": "Original flavor KitKat purchased in Atlanta, GA, USA in Feb. 2005",
+  "orig_size": "1410x531"
+ },
+ "kk_bigarray": {
+  "file": "kk_bigarray.jpg",
+  "title": "File:Big-Kit-Kat-Array.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Big-Kit-Kat-Array.jpg",
+  "license": "CC0",
+  "author": "Evan-Amos",
+  "description": "An array of big Kit Kat bars.  These are from the UK and from left: Chunky, White and Caramel.  Made by Nestle.",
+  "orig_size": "4020x1380"
+ },
+ "kk_bar_classic": {
+  "file": "kk_bar_classic.jpg",
+  "title": "File:KitKat.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:KitKat.jpg",
+  "license": "Public domain",
+  "author": "Scott Ehardt",
+  "description": "Original flavor KitKat purchased in Atlanta, GA, USA in Feb. 2005",
+  "orig_size": "1119x789"
+ },
+ "kkjp_ujimatcha_box": {
+  "file": "kkjp_ujimatcha_box.jpg",
+  "title": "File:KitKat Uji Matcha chocolate.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:KitKat_Uji_Matcha_chocolate.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Ssu",
+  "description": "KitKat Uji Matcha chocolate",
+  "orig_size": "4032x3024"
+ },
+ "kkjp_matcha_bar": {
+  "file": "kkjp_matcha_bar.jpg",
+  "title": "File:Japanese Kit Kat Bar.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Japanese_Kit_Kat_Bar.JPG",
+  "license": "CC BY-SA 4.0",
+  "author": "Ktr101",
+  "description": "Japanese Kit Kat Bar",
+  "orig_size": "5184x3456"
+ },
+ "kkjp_matcha_wrap": {
+  "file": "kkjp_matcha_wrap.jpg",
+  "title": "File:Kit Kat Matcha-9136.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kit_Kat_Matcha-9136.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Raimond Spekking",
+  "description": "Kit Kat Matcha",
+  "orig_size": "4132x4132"
+ },
+ "kkjp_sakura_split": {
+  "file": "kkjp_sakura_split.jpg",
+  "title": "File:KitKat Sakura Matcha split (16466348192).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:KitKat_Sakura_Matcha_split_(16466348192).jpg",
+  "license": "CC BY 2.0",
+  "author": "Bodo",
+  "description": "Weitere Informationen hier: &lt;a href=\"http://schoko-riegel.com/index.php/component/content/article/77-schokor/1173-kitkatsakuramatcha\" rel=\"noreferrer nofollow\"&gt;schoko-riegel.com/index.php/compon",
+  "orig_size": "1000x811"
+ },
+ "kkjp_regional_box": {
+  "file": "kkjp_regional_box.jpg",
+  "title": "File:ご当地キットカット 2012 (8565064918).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:%E3%81%94%E5%BD%93%E5%9C%B0%E3%82%AD%E3%83%83%E3%83%88%E3%82%AB%E3%83%83%E3%83%88_2012_(8565064918).jpg",
+  "license": "CC BY 2.0",
+  "author": "kagawa_ymg from Japan",
+  "description": "ご当地キットカット",
+  "orig_size": "1536x2048"
+ },
+ "kkjp_variety_wall": {
+  "file": "kkjp_variety_wall.jpg",
+  "title": "File:Japanese kit Kat varieties.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Japanese_kit_Kat_varieties.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Haha169",
+  "description": "A variety of Japanese exclusive Kit Kat flavors on display in a store in Osaka, Japan.",
+  "orig_size": "2250x4000"
+ },
+ "kkjp_chocolatory": {
+  "file": "kkjp_chocolatory.jpg",
+  "title": "File:Kit Kat Chocolatory en Shibuya (51073123691).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Kit_Kat_Chocolatory_en_Shibuya_(51073123691).jpg",
+  "license": "CC BY 2.0",
+  "author": "Antonio Tajuelo from Tokio, Japón",
+  "description": "Kit Kat Chocolatory en Shibuya - Kit Kat Chocolatory Shibuya\n¡Espero que te haya gustado conocer la chocolatería de Kit Kat! :)\n\nPuedes ver la publicación completa en: &lt;a href=\"https://antoniotajue",
+  "orig_size": "4032x2268"
+ },
+ "kkjp_minis": {
+  "file": "kkjp_minis.jpg",
+  "title": "File:Japanese Kit Kats.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Japanese_Kit_Kats.jpg",
+  "license": "CC BY 2.0",
+  "author": "Krista",
+  "description": "Get the full scoop",
+  "orig_size": "1000x667"
+ },
+ "fr_cafe_tournesol": {
+  "file": "fr_cafe_tournesol.jpg",
+  "title": "File:Terrasse du café Le Tournesol 9 rue de la Gaité à Paris un matin pluvieux de novembre 2015 - P1440464.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Terrasse_du_caf%C3%A9_Le_Tournesol_9_rue_de_la_Gait%C3%A9_%C3%A0_Paris_un_matin_pluvieux_de_novembre_2015_-_P1440464.JPG",
+  "license": "CC BY-SA 4.0",
+  "author": "Basilou",
+  "description": "La terrasse déserte du café Le Tournesol 9 rue de la Gaité à Paris le matin du 19 novembre 2015.",
+  "orig_size": "3264x2448"
+ },
+ "fr_cafe_standre": {
+  "file": "fr_cafe_standre.jpg",
+  "title": "File:Paris, à la terrasse du café, place Saint-André-des-Art, 2020.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Paris,_%C3%A0_la_terrasse_du_caf%C3%A9,_place_Saint-Andr%C3%A9-des-Art,_2020.jpg",
+  "license": "CC BY 2.0",
+  "author": "besopha",
+  "description": "Paris, à la terrasse du café",
+  "orig_size": "5008x3339"
+ },
+ "nes_cafe_au_lait": {
+  "file": "nes_cafe_au_lait.jpg",
+  "title": "File:Café au lait 1.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_au_lait_1.JPG",
+  "license": "CC BY-SA 4.0",
+  "author": "Touzrimounir",
+  "description": "café au lait",
+  "orig_size": "4320x3240"
+ },
+ "nes_gold_grains": {
+  "file": "nes_gold_grains.jpg",
+  "title": "File:Instant Coffee Grains Inside Jar.jpeg",
+  "page": "https://commons.wikimedia.org/wiki/File:Instant_Coffee_Grains_Inside_Jar.jpeg",
+  "license": "CC BY-SA 4.0",
+  "author": "SAM31416",
+  "description": "NESCAFE GOLD instant coffee grains inside jar.",
+  "orig_size": "3456x3456"
+ },
+ "nes_dg_capsules": {
+  "file": "nes_dg_capsules.jpg",
+  "title": "File:Vista cenital de un surtido de cápsulas Nescafé Dolce Gusto.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vista_cenital_de_un_surtido_de_c%C3%A1psulas_Nescaf%C3%A9_Dolce_Gusto.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Raquelrodriguez84",
+  "description": "Cápsulas de cafés y tés de Nescafé Dolce Gusto: Americano, Macaron Green Tea, Café con Leche, Espresso y Cortado.",
+  "orig_size": "3264x2448"
+ },
+ "nes_dg_drop": {
+  "file": "nes_dg_drop.jpg",
+  "title": "File:Vista cenital frontal de la cafetera Drop roja de Nescafé Dolce Gusto.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Vista_cenital_frontal_de_la_cafetera_Drop_roja_de_Nescaf%C3%A9_Dolce_Gusto.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Raquelrodriguez84",
+  "description": "La cafetera Drop, el nuevo modelo de Nescafé Dolce Gusto, ganadora del premio Red Dot de diseño 2016. Taza de la colección pop de la marca en la que se sirve la variedad de café Cortado.",
+  "orig_size": "2442x2970"
+ },
+ "nesjp_genio_home": {
+  "file": "nesjp_genio_home.jpg",
+  "title": "File:ネスカフェ ドルチェグスト (27877603382).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:%E3%83%8D%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7_%E3%83%89%E3%83%AB%E3%83%81%E3%82%A7%E3%82%B0%E3%82%B9%E3%83%88_(27877603382).jpg",
+  "license": "CC BY 2.0",
+  "author": "Shinji",
+  "description": "「ネスカフェ ドルチェ グスト」 ジェニオモデル",
+  "orig_size": "3166x4215"
+ },
+ "nesjp_vending": {
+  "file": "nesjp_vending.jpg",
+  "title": "File:NESCAFE (96552190).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:NESCAFE_(96552190).jpg",
+  "license": "CC BY 2.0",
+  "author": "Bit Boy",
+  "description": "One of thousands and thousands of outdoor vending machines. I never found the oft-rumored machine that dispenses underwear.",
+  "orig_size": "532x800"
+ },
+ "nes_red_mug": {
+  "file": "nes_red_mug.jpg",
+  "title": "File:Nescafé Cup Winter.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_Cup_Winter.jpg",
+  "license": "Public domain",
+  "author": "Albertyanks  Albert Jankowski",
+  "description": "Cup, Nescafé - \"Winter\"",
+  "orig_size": "1255x1195"
+ },
+ "jp_shinjuku": {
+  "file": "jp_shinjuku.jpg",
+  "title": "File:Shinjuku Station South Entrance area at night, Tokyo, Japan (2015-01-24 by calvision @Pixabay 617590).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Shinjuku_Station_South_Entrance_area_at_night,_Tokyo,_Japan_(2015-01-24_by_calvision_@Pixabay_617590).jpg",
+  "license": "CC0",
+  "author": "康 复 (calvision) from Tokyo, Japan",
+  "description": "Shinjuku Station South Entrance area at night, Tokyo, Japan (2015-01-24 by calvision @Pixabay 617590)",
+  "orig_size": "7346x4896"
+ },
+ "maggi_fr_tin": {
+  "file": "maggi_fr_tin.jpg",
+  "title": "File:Maggi Bouillon gras boîte fer de 112 étuis - Maggi France -.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Maggi_Bouillon_gras_bo%C3%AEte_fer_de_112_%C3%A9tuis_-_Maggi_France_-.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Ltqphg",
+  "description": "Maggi Bouillon gras boîte fer de 112 étuis - Maggi France -",
+  "orig_size": "1984x1952"
+ },
+ "maggi_fr_kub": {
+  "file": "maggi_fr_kub.jpg",
+  "title": "File:Bouillon KUB.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Bouillon_KUB.JPG",
+  "license": "CC BY-SA 4.0",
+  "author": "ReinerausH",
+  "description": "Sept ans après la mort de Julius Maggi, en 1919, son entreprise prend le nom de SISA (Société industrielle des spécialités alimentaires).",
+  "orig_size": "2574x2960"
+ },
+ "maggi_bottle": {
+  "file": "maggi_bottle.jpg",
+  "title": "File:Maggiflasche (2023-10-01) 01.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Maggiflasche_(2023-10-01)_01.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Simon Mannweiler",
+  "description": "Maggiwürze in der Flasche. Inhalt: 1000g/800ml.",
+  "orig_size": "5504x7906"
+ },
+ "food_fr_potaufeu_ingr": {
+  "file": "food_fr_potaufeu_ingr.jpg",
+  "title": "File:Pot-au-feu ingrédients.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pot-au-feu_ingr%C3%A9dients.jpg",
+  "license": "CC BY 2.0",
+  "author": "Andrea_Nguyen",
+  "description": "Pot-au-feu ingrédients",
+  "orig_size": "4272x2848"
+ },
+ "food_jp_potofu": {
+  "file": "food_jp_potofu.jpg",
+  "title": "File:Pot-au-feu---2024-08-08.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pot-au-feu---2024-08-08.jpg",
+  "license": "CC BY 4.0",
+  "author": "RuinDig/Yuki Uchida",
+  "description": "ソーセージ入りポトフ。ブロッコリー、玉ねぎ、さつまいも、キノコ。",
+  "orig_size": "4624x3468"
+ },
+ "food_jp_consomme": {
+  "file": "food_jp_consomme.jpg",
+  "title": "File:Pot-au-feu soup.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Pot-au-feu_soup.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "MaedaAkihiko",
+  "description": "Cooking example of pot-au-feu based on consomme soup",
+  "orig_size": "5472x3648"
+ },
+ "logo_nestle": {
+  "file": "logo_nestle.png",
+  "title": "File:Nestlé textlogo.svg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nestl%C3%A9_textlogo.svg",
+  "license": "Public domain",
+  "author": "Société des Produits Nestlé S.A.",
+  "description": "Nestlé logo",
+  "orig_size": "300x82"
+ },
+ "logo_kitkat": {
+  "file": "logo_kitkat.png",
+  "title": "File:Logo of the KitKat.svg",
+  "page": "https://commons.wikimedia.org/wiki/File:Logo_of_the_KitKat.svg",
+  "license": "Public domain",
+  "author": "Anonykitten",
+  "description": "Логотип KitKat",
+  "orig_size": "512x336"
+ },
+ "logo_nescafe": {
+  "file": "logo_nescafe.png",
+  "title": "File:Nescafé logo 2014.svg",
+  "page": "https://commons.wikimedia.org/wiki/File:Nescaf%C3%A9_logo_2014.svg",
+  "license": "Public domain",
+  "author": "Nestlé",
+  "description": "Nescafé logo used since 2014.",
+  "orig_size": "1251x351"
+ },
+ "logo_maggi": {
+  "file": "logo_maggi.png",
+  "title": "File:Logo Maggi.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Logo_Maggi.png",
+  "license": "Public domain",
+  "author": "NESTLE",
+  "description": "ancien logo de la marque d'aides culinaires Maggi.",
+  "orig_size": "308x197"
+ }
+}
